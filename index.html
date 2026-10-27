@@ -248,6 +248,37 @@
   .saberes li::marker{color:var(--clay);font-weight:700}
   dialog{max-height:88vh;overflow-y:auto}
   /* Página de actividad */
+  /* Decoración de Actividades */
+  .acts-hero{display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:center;margin-bottom:12px}
+  .hl{font-style:normal;position:relative;display:inline-block}
+  .acts-art,.act-art{position:relative;width:280px;height:280px;justify-self:center}
+  .acts-art .blob,.act-art .blob{position:absolute;inset:40px;background:linear-gradient(135deg,var(--clay-soft),var(--sun) 50%,var(--accent-soft));
+    border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;animation:morph 14s ease-in-out infinite}
+  .orbit2{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .orbit2 .trail{fill:none;stroke:var(--clay);stroke-width:1.4;stroke-dasharray:3 9;opacity:.55}
+  .orbit2 .plane{fill:var(--surface);stroke:var(--accent);stroke-width:1.6;stroke-linejoin:round}
+  .fi{position:absolute;width:62px;height:62px;border-radius:20px;display:grid;place-items:center;background:var(--surface);color:var(--accent);
+    box-shadow:var(--shadow);border:1px solid var(--line);animation:bob 6s ease-in-out infinite}
+  .fi1{top:58px;left:62px}.fi2{top:52px;right:58px;color:var(--clay);animation-delay:-1.5s}
+  .fi3{bottom:58px;left:70px;color:var(--clay);animation-delay:-3s}.fi4{bottom:52px;right:66px;animation-delay:-4.5s}
+  .twk{position:absolute;color:var(--clay);font-size:20px;animation:twinkle 3s ease-in-out infinite}
+  .twk.s1{top:10px;left:46%}.twk.s2{bottom:18px;right:10px;font-size:14px;color:var(--accent);animation-delay:-1.4s}
+  @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+  .act{position:relative}
+  .act-ico{position:absolute;top:26px;right:26px;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);transition:transform .4s}
+  .act:nth-child(even) .act-ico{background:var(--clay-soft);color:var(--clay)}
+  .act:hover .act-ico{animation:wiggle .7s ease}
+  @keyframes wiggle{25%{transform:rotate(-10deg) scale(1.08)}50%{transform:rotate(8deg) scale(1.08)}75%{transform:rotate(-4deg)}}
+  .act-head{display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:center;max-width:860px}
+  .act-head .act-art{width:210px;height:210px}
+  .act-art .blob{inset:18px}
+  .big-ico{position:absolute;inset:0;display:grid;place-items:center;color:var(--accent);animation:bob 6s ease-in-out infinite}
+  .big-ico svg{width:88px;height:88px;stroke-width:1.3}
+  .dot-d{position:absolute;border-radius:50%;background:var(--clay);opacity:.5;animation:bob 5s ease-in-out infinite}
+  .dot-d.d1{width:10px;height:10px;top:30px;right:22px}.dot-d.d2{width:7px;height:7px;bottom:34px;left:16px;background:var(--accent);animation-delay:-2s}
+  .act-page{max-width:860px}
+  @media (max-width:760px){.acts-hero,.act-head{grid-template-columns:1fr}.acts-art{width:240px;height:240px;order:-1}.act-head .act-art{display:none}}
   .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
   .back:hover{color:var(--accent)}
   .act-page{max-width:800px}
@@ -325,7 +356,7 @@
   <div class="wrap">
 
     <!-- ================= INICIO ================= -->
-    <div class="view" id="inicio">
+    <div class="view" id="v-inicio">
       <div class="hero">
         <!-- Dibujos decorativos -->
         <span class="doodle" style="top:-6px;left:46%;animation-delay:-1s" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--clay)"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></svg></span>
@@ -468,15 +499,27 @@
     </div>
 
     <!-- ================= ACTIVIDADES ================= -->
-    <div class="view" id="actividades" hidden>
-      <p class="eyebrow">02</p>
-      <h2 class="page-title"><span lang="es">Actividades</span><span lang="eu">Jarduerak</span></h2>
+    <div class="view" id="v-actividades" hidden>
+      <div class="acts-hero">
+        <div>
+      <p class="eyebrow"><span lang="es">Portafolio de TIC</span><span lang="eu">IKT portfolioa</span></p>
+      <h2 class="page-title"><em class="hl"><span lang="es">Actividades</span><span lang="eu">Jarduerak</span><svg class="scribble" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M4 11 C 50 3, 95 15, 150 8 S 250 4, 296 10"/></svg></em></h2>
       <p class="sub"><span lang="es">Los trabajos de la asignatura de TIC. Pulsa en cada uno para verlo completo.</span><span lang="eu">IKT irakasgaiko lanak. Sakatu bakoitzean osorik ikusteko.</span></p>
+        </div>
+        <div class="acts-art" aria-hidden="true">
+          <span class="blob"></span>
+          <svg class="orbit2" viewBox="0 0 300 300"><circle class="trail" cx="150" cy="150" r="118"/>
+            <path class="plane" d="M10 0 L-10 -8 L-6 0 L-10 8 Z M-6 0 L10 0"><animateMotion dur="18s" repeatCount="indefinite" rotate="auto" path="M150 32 A118 118 0 1 1 149.9 32"/></path></svg>
+          <span class="fi fi1"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h4M7 14h6"/><rect x="14" y="9" width="3.5" height="4.5" rx=".6"/><circle cx="12" cy="4.5" r="1.3"/></svg></span><span class="fi fi2"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20.5h6M10 17h4"/></svg></span><span class="fi fi3"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="13" height="10" rx="1.5"/><path d="M1 18h15"/><rect x="17" y="8" width="6" height="11" rx="1.2"/><path d="M19.5 17h1"/></svg></span><span class="fi fi4"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/><path d="M10.5 9.5v5l4-2.5z"/></svg></span>
+          <span class="twk s1">✦</span><span class="twk s2">✦</span>
+        </div>
+      </div>
 
       <div class="acts">
         <!-- CAMBIAR: título, resumen, herramientas y el bloque .detail de cada actividad -->
         <button class="card act" type="button">
           <span class="n">01</span>
+          <span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h4M7 14h6"/><rect x="14" y="9" width="3.5" height="4.5" rx=".6"/><circle cx="12" cy="4.5" r="1.3"/></svg></span>
           <h3><span lang="es">Padlet: Psicología en 1º de Bachillerato</span><span lang="eu">Padlet: Psikologia Batxilergoko 1. mailan</span></h3>
           <p><span lang="es">Muro colaborativo para trabajar los orígenes, los métodos y los campos de la psicología.</span><span lang="eu">Psikologiaren jatorria, metodoak eta eremuak lantzeko horma kolaboratiboa.</span></p>
           <span class="tags"><span class="tag">Padlet</span><span class="tag"><span lang="es">Psicología</span><span lang="eu">Psikologia</span></span><span class="tag"><span lang="es">1º Bachillerato</span><span lang="eu">Batxilergoko 1. maila</span></span></span>
@@ -499,6 +542,7 @@
 
         <button class="card act" type="button">
           <span class="n">02</span>
+          <span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20.5h6M10 17h4"/></svg></span>
           <h3><span lang="es">Gamificación y aplicación en el aula</span><span lang="eu">Gamifikazioa eta ikasgelan aplikatzea</span></h3>
           <p><span lang="es">Logros, feedback y recompensas como elementos de juego para motivar al alumnado.</span><span lang="eu">Lorpenak, feedbacka eta sariak, ikasleak motibatzeko joko-elementu gisa.</span></p>
           <span class="tags"><span class="tag"><span lang="es">Gamificación</span><span lang="eu">Gamifikazioa</span></span><span class="tag">Hearthstone Card Generator</span></span>
@@ -523,47 +567,43 @@
 
         <button class="card act" type="button">
           <span class="n">03</span>
-          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
-          <p><span lang="es">Resumen breve del trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
-          <span class="tags"><span class="tag">PowerPoint</span><span class="tag">YouTube</span></span>
+          <span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="13" height="10" rx="1.5"/><path d="M1 18h15"/><rect x="17" y="8" width="6" height="11" rx="1.2"/><path d="M19.5 17h1"/></svg></span>
+          <h3><span lang="es">Modelos BYOD: trae tu propio dispositivo</span><span lang="eu">BYOD ereduak: ekarri zure gailua</span></h3>
+          <p><span lang="es">El alumnado aprende con sus propios dispositivos en el aula.</span><span lang="eu">Ikasleek beren gailuekin ikasten dute ikasgelan.</span></p>
+          <span class="tags"><span class="tag">BYOD</span><span class="tag"><span lang="es">Dispositivos móviles</span><span lang="eu">Gailu mugikorrak</span></span></span>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
-            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
-            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
-            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
-            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
-            <h4><span lang="es">Trabajo</span><span lang="eu">Lana</span></h4>
-            <p><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+            <h4><span lang="es">¿Qué es el modelo BYOD?</span><span lang="eu">Zer da BYOD eredua?</span></h4>
+            <p><span lang="es">BYOD (<em>Bring Your Own Device</em>, «trae tu propio dispositivo») es un modelo en el que el alumnado utiliza sus propios dispositivos —móviles, tabletas u ordenadores portátiles— como herramienta de aprendizaje en el aula. Favorece la personalización, el acceso a recursos digitales y la continuidad entre el aprendizaje dentro y fuera del aula, aunque exige planificar aspectos como la equidad de acceso, la conectividad, la seguridad y el uso responsable.</span><span lang="eu">BYOD (<em>Bring Your Own Device</em>, «ekarri zure gailua») ikasleek beren gailuak —mugikorrak, tabletak edo eramangarriak— ikasgelan ikaskuntza-tresna gisa erabiltzen dituzten eredua da. Pertsonalizazioa, baliabide digitaletarako sarbidea eta ikasgela barruko eta kanpoko ikaskuntzaren arteko jarraitutasuna errazten ditu, baina aldez aurretik planifikatu behar dira sarbide-ekitatea, konexioa, segurtasuna eta erabilera arduratsua.</span></p>
+            <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
           </span>
         </button>
 
         <button class="card act" type="button">
           <span class="n">04</span>
-          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
-          <p><span lang="es">Resumen breve del trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
-          <span class="tags"><span class="tag">Genially</span></span>
+          <span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/><path d="M10.5 9.5v5l4-2.5z"/></svg></span>
+          <h3><span lang="es">Flipped Classroom: la clase invertida</span><span lang="eu">Flipped Classroom: alderantzizko ikasgela</span></h3>
+          <p><span lang="es">La teoría se trabaja en casa y el aula se convierte en un espacio activo.</span><span lang="eu">Teoria etxean lantzen da, eta ikasgela gune aktibo bihurtzen da.</span></p>
+          <span class="tags"><span class="tag">Flipped Classroom</span><span class="tag"><span lang="es">Aprendizaje activo</span><span lang="eu">Ikaskuntza aktiboa</span></span></span>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
-            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
-            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
-            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
-            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
-            <h4><span lang="es">Trabajo</span><span lang="eu">Lana</span></h4>
-            <p><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+            <h4><span lang="es">¿Qué es la Flipped Classroom?</span><span lang="eu">Zer da Flipped Classroom delakoa?</span></h4>
+            <p><span lang="es">En el modelo de clase invertida (<em>Flipped Classroom</em>), el alumnado trabaja los contenidos teóricos fuera del aula —por ejemplo, mediante vídeos o lecturas— y el tiempo de clase se dedica a actividades prácticas, resolución de dudas, trabajo cooperativo y aplicación de lo aprendido. El docente pasa a ser guía y acompañante del proceso de aprendizaje.</span><span lang="eu">Alderantzizko ikasgela ereduan (<em>Flipped Classroom</em>), ikasleek eduki teorikoak ikasgelatik kanpo lantzen dituzte —adibidez, bideoen edo irakurgaien bidez—, eta eskola-denbora jarduera praktikoetarako, zalantzak argitzeko, lankidetzan aritzeko eta ikasitakoa aplikatzeko erabiltzen da. Irakaslea ikaskuntza-prozesuaren gida eta laguntzaile bihurtzen da.</span></p>
+            <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
           </span>
         </button>
       </div>
     </div>
 
     <!-- ================= PÁGINA DE CADA ACTIVIDAD (se rellena sola) ================= -->
-    <div class="view" id="actividad" hidden>
+    <div class="view" id="v-actividad" hidden>
       <a class="back" href="#actividades"><span lang="es">← Volver a actividades</span><span lang="eu">← Jardueretara itzuli</span></a>
       <article class="act-page" id="actPage"></article>
       <div class="act-pager" id="actPager"></div>
     </div>
 
     <!-- ================= USO DE IA ================= -->
-    <div class="view" id="ia" hidden>
+    <div class="view" id="v-ia" hidden>
       <p class="eyebrow">✦ <span lang="es">Inteligencia artificial</span><span lang="eu">Adimen artifiziala</span></p>
       <h2 class="page-title"><span lang="es">Uso de la IA</span><span lang="eu">AAren erabilera</span></h2>
       <p class="sub"><span lang="es">Qué herramientas de IA he utilizado, para qué y cómo he revisado sus resultados.</span><span lang="eu">Zein AA tresna erabili ditudan, zertarako eta haien emaitzak nola berrikusi ditudan.</span></p>
@@ -661,12 +701,12 @@
     if (am && renderActivity(+am[1])) id = "actividades";
     else if (!views.includes(id)) id = "inicio";
     const viewId = am && id === "actividades" ? "actividad" : (id === "presentacion" ? "inicio" : id);
-    document.querySelectorAll(".view").forEach(v => v.hidden = v.id !== viewId);
+    document.querySelectorAll(".view").forEach(v => v.hidden = v.id !== "v-" + viewId);
     nav.querySelectorAll("a").forEach(a => a.classList.toggle("active", a.dataset.view === id));
     document.getElementById("iaBtn").classList.toggle("active", id === "ia");
     nav.classList.remove("open");
     if (id === "presentacion") document.getElementById("presentacion").scrollIntoView({ behavior: "smooth" });
-    else window.scrollTo({ top: 0 });
+    else { window.scrollTo(0, 0); setTimeout(() => window.scrollTo(0, 0), 0); }
   }
   window.addEventListener("hashchange", () => show(location.hash.slice(1)));
   show(location.hash.slice(1));
@@ -683,10 +723,13 @@
     const cards = document.querySelectorAll(".act"), card = cards[n-1];
     if (!card) return false;
     document.getElementById("actPage").innerHTML =
+      '<div class="act-head"><div>' +
       '<p class="eyebrow">' + card.querySelector(".n").textContent + '</p>' +
       '<h2 class="page-title">' + card.querySelector("h3").innerHTML + '</h2>' +
       '<p class="sub">' + card.querySelector("p").innerHTML + '</p>' +
-      '<div class="tags">' + card.querySelector(".tags").innerHTML + '</div>' +
+      '<div class="tags">' + card.querySelector(".tags").innerHTML + '</div></div>' +
+      '<div class="act-art" aria-hidden="true"><span class="blob"></span><span class="big-ico">' + card.querySelector(".act-ico").innerHTML + '</span>' +
+      '<span class="twk s1">✦</span><span class="twk s2">✦</span><span class="dot-d d1"></span><span class="dot-d d2"></span></div></div>' +
       '<div class="card act-body">' + card.querySelector(".detail").innerHTML + '</div>';
     const pager = document.getElementById("actPager"); pager.innerHTML = "";
     if (n > 1) pager.innerHTML += '<a href="#actividad-' + (n-1) + '"><span lang="es">← Actividad anterior</span><span lang="eu">← Aurreko jarduera</span></a>';
