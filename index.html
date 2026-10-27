@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PORTAFOLIO TIC · IKT PORTFOLIOA
+  ------------------------------------------------------------
+  CÓMO EDITAR:
+  - Cada texto aparece dos veces:  <span lang="es">…</span>  y  <span lang="eu">…</span>
+    Cambia los dos (castellano y euskera).
+  - Busca "CAMBIAR" para encontrar todo lo que tienes que personalizar.
+  - Archivos que puedes poner junto a este index.html:
+      foto.jpg  → tu foto (opcional)
+      cv.pdf    → tu currículum
+  ============================================================
+-->
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio TIC · Tu Nombre</title> <!-- CAMBIAR -->
+<meta name="description" content="Portafolio de TIC y perfil profesional / IKT portfolioa eta profil profesionala">
+<style>
+  :root{
+    --bg:#f7f8fb; --surface:#ffffff; --text:#1b2333; --muted:#5b6578;
+    --line:#e3e7ef; --accent:#0f6e74; --accent-soft:#e3f1f1; --accent-2:#1f3a68;
+    --shadow:0 1px 2px rgba(20,30,50,.06),0 6px 20px rgba(20,30,50,.06);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f141c; --surface:#171e29; --text:#e8ecf3; --muted:#9aa5b8;
+      --line:#263042; --accent:#4fc1c4; --accent-soft:#16333a; --accent-2:#8fb2ff;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;font-size:17px}
+  a{color:var(--accent)}
+  img{max-width:100%;display:block}
+
+  /* Idiomas: se muestra solo el activo */
+  html[data-lang="es"] [lang="eu"], html[data-lang="eu"] [lang="es"]{display:none !important}
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Cabecera ---------- */
+  header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:16px;height:64px}
+  .brand{font-weight:700;text-decoration:none;color:var(--text);letter-spacing:-.01em;margin-right:auto}
+  .brand small{display:block;font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;line-height:1}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+  nav a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:550;font-size:15px}
+  nav a:hover{color:var(--text);background:var(--surface)}
+  nav a.active{color:var(--accent);background:var(--accent-soft)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+  .lang button{border:0;background:none;color:var(--muted);font:inherit;font-size:13px;font-weight:700;
+    padding:5px 11px;border-radius:999px;cursor:pointer;letter-spacing:.03em}
+  .lang button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .menu-btn{display:none;border:1px solid var(--line);background:var(--surface);color:var(--text);
+    border-radius:8px;width:40px;height:40px;font-size:20px;cursor:pointer}
+  @media (max-width:760px){
+    .menu-btn{display:block}
+    nav{position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);
+      display:none;padding:8px 20px 16px}
+    nav.open{display:block}
+    nav ul{flex-direction:column}
+  }
+
+  /* ---------- Portada ---------- */
+  .hero{padding:72px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+  .avatar{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:grid;place-items:center;color:#fff;font-size:48px;font-weight:700;overflow:hidden;box-shadow:var(--shadow)}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .eyebrow{color:var(--accent);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+  h1{font-size:clamp(32px,5vw,48px);line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
+  .lead{font-size:19px;color:var(--muted);margin:0 0 24px;max-width:620px}
+  .btns{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:650;
+    text-decoration:none;font-size:15px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn:hover{transform:translateY(-1px)}
+  @media (max-width:600px){.hero-grid{grid-template-columns:1fr;text-align:left}.avatar{width:110px;height:110px;font-size:36px}}
+
+  /* ---------- Secciones ---------- */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-size:30px;margin:0 0 6px;letter-spacing:-.015em}
+  h3{font-size:20px;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 32px;max-width:680px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media (max-width:760px){.grid-2{grid-template-columns:1fr}}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{background:var(--accent-soft);color:var(--accent);padding:5px 12px;border-radius:999px;font-size:14px;font-weight:600}
+  .block-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:40px 0 16px}
+
+  /* Línea de tiempo */
+  .timeline{list-style:none;margin:0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .timeline li{position:relative;padding:0 0 28px 40px}
+  .timeline li:last-child{padding-bottom:0}
+  .timeline li::before{content:"";position:absolute;left:2px;top:6px;width:16px;height:16px;border-radius:50%;
+    background:var(--surface);border:3px solid var(--accent)}
+  .when{font-size:14px;font-weight:700;color:var(--accent)}
+  .where{color:var(--muted);font-weight:500}
+  .timeline p{margin:6px 0 0;color:var(--muted)}
+
+  /* CV y LinkedIn */
+  .link-card{display:flex;gap:16px;align-items:center;text-decoration:none;color:var(--text)}
+  .link-card:hover{border-color:var(--accent)}
+  .icon{flex:none;width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+  .link-card p{margin:2px 0 0;color:var(--muted);font-size:15px}
+
+  /* Actividades */
+  .activity{display:flex;flex-direction:column}
+  .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+  .activity p{color:var(--muted);margin:6px 0 0}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+  .tag{border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:13px;color:var(--muted)}
+  details{border-top:1px solid var(--line);margin-top:auto;padding-top:12px}
+  summary{cursor:pointer;font-weight:650;color:var(--accent);font-size:15px}
+  details h4{margin:14px 0 2px;font-size:15px}
+  details p{margin:0}
+
+  /* Uso de IA */
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .table-wrap{overflow-x:auto;padding:0}
+  .principles{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .principles li{padding-left:28px;position:relative}
+  .principles li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:15px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio">
+      <small><span lang="es">Portafolio TIC</span><span lang="eu">IKT portfolioa</span></small>
+      Tu Nombre <!-- CAMBIAR -->
+    </a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#inicio"><span lang="es">Inicio</span><span lang="eu">Hasiera</span></a></li>
+        <li><a href="#presentacion"><span lang="es">Presentación</span><span lang="eu">Aurkezpena</span></a></li>
+        <li><a href="#actividades"><span lang="es">Actividades</span><span lang="eu">Jarduerak</span></a></li>
+        <li><a href="#ia"><span lang="es">Uso de IA</span><span lang="eu">AAren erabilera</span></a></li>
+      </ul>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma / Hizkuntza">
+      <button type="button" data-set="eu" aria-pressed="false">EUS</button>
+      <button type="button" data-set="es" aria-pressed="true">ES</button>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- ================= INICIO ================= -->
+  <div class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <!-- CAMBIAR: para usar tu foto, sustituye "TN" por:  <img src="foto.jpg" alt="Tu Nombre"> -->
+      <div class="avatar">TN</div>
+      <div>
+        <p class="eyebrow"><span lang="es">Portafolio de TIC</span><span lang="eu">IKT portfolioa</span></p>
+        <h1><span lang="es">Hola, soy Tu Nombre</span><span lang="eu">Kaixo, Tu Nombre naiz</span></h1> <!-- CAMBIAR -->
+        <p class="lead">
+          <span lang="es">Estudiante de [tu grado / ciclo]. En esta web recojo mi trabajo en la asignatura de TIC y mi trayectoria profesional.</span>
+          <span lang="eu">[Zure gradua / zikloa] ikaslea. Webgune honetan IKT irakasgaian egindako lana eta nire ibilbide profesionala bildu ditut.</span>
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="cv.pdf" download>
+            <span lang="es">Descargar CV</span><span lang="eu">CVa deskargatu</span>
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener">LinkedIn ↗</a> <!-- CAMBIAR -->
+          <a class="btn" href="#actividades"><span lang="es">Ver actividades</span><span lang="eu">Jarduerak ikusi</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PRESENTACIÓN ================= -->
+  <section id="presentacion">
+    <div class="wrap">
+      <h2><span lang="es">Presentación personal</span><span lang="eu">Aurkezpen pertsonala</span></h2>
+      <p class="sub">
+        <span lang="es">Quién soy, qué he hecho y hacia dónde quiero ir profesionalmente.</span>
+        <span lang="eu">Nor naizen, zer egin dudan eta profesionalki nora joan nahi dudan.</span>
+      </p>
+
+      <!-- Perfil profesional -->
+      <div class="block-title"><span lang="es">Perfil profesional</span><span lang="eu">Profil profesionala</span></div>
+      <div class="card">
+        <!-- CAMBIAR: 3-5 frases sobre ti -->
+        <p style="margin-top:0">
+          <span lang="es">Soy una persona organizada y con interés por la tecnología. Me gusta aprender herramientas nuevas y aplicarlas a problemas reales. Busco desarrollarme profesionalmente en el ámbito de [tu sector].</span>
+          <span lang="eu">Pertsona antolatua naiz eta teknologia interesatzen zait. Tresna berriak ikastea eta benetako arazoetan aplikatzea gustatzen zait. [Zure sektorea] arloan profesionalki garatu nahi dut.</span>
+        </p>
+        <div class="chips">
+          <!-- CAMBIAR: tus competencias -->
+          <span class="chip"><span lang="es">Trabajo en equipo</span><span lang="eu">Talde-lana</span></span>
+          <span class="chip"><span lang="es">Comunicación</span><span lang="eu">Komunikazioa</span></span>
+          <span class="chip">Microsoft Office</span>
+          <span class="chip">Google Workspace</span>
+          <span class="chip"><span lang="es">Edición de vídeo</span><span lang="eu">Bideo-edizioa</span></span>
+          <span class="chip"><span lang="es">Euskera · Castellano · Inglés</span><span lang="eu">Euskara · Gaztelania · Ingelesa</span></span>
+        </div>
+      </div>
+
+      <!-- Línea de tiempo -->
+      <div class="block-title"><span lang="es">Experiencia laboral</span><span lang="eu">Lan esperientzia</span></div>
+      <div class="card">
+        <ol class="timeline">
+          <!-- CAMBIAR: copia/borra bloques <li> según tu experiencia (de más reciente a más antigua) -->
+          <li>
+            <div class="when"><span lang="es">2025 – Actualidad</span><span lang="eu">2025 – gaur egun</span></div>
+            <h3><span lang="es">Puesto</span><span lang="eu">Lanpostua</span> <span class="where">· Empresa</span></h3>
+            <p><span lang="es">Breve descripción de tus tareas y logros.</span><span lang="eu">Zure zereginen eta lorpenen deskribapen laburra.</span></p>
+          </li>
+          <li>
+            <div class="when">2024</div>
+            <h3><span lang="es">Prácticas</span><span lang="eu">Praktikak</span> <span class="where">· Empresa</span></h3>
+            <p><span lang="es">Qué hiciste y qué aprendiste.</span><span lang="eu">Zer egin zenuen eta zer ikasi zenuen.</span></p>
+          </li>
+          <li>
+            <div class="when"><span lang="es">Verano 2023</span><span lang="eu">2023ko uda</span></div>
+            <h3><span lang="es">Trabajo de temporada</span><span lang="eu">Denboraldiko lana</span> <span class="where">· Empresa</span></h3>
+            <p><span lang="es">Atención al cliente, trabajo en equipo…</span><span lang="eu">Bezeroarentzako arreta, talde-lana…</span></p>
+          </li>
+          <li>
+            <div class="when">2022</div>
+            <h3><span lang="es">Voluntariado</span><span lang="eu">Boluntariotza</span> <span class="where">· Asociación</span></h3>
+            <p><span lang="es">Actividad y responsabilidades.</span><span lang="eu">Jarduera eta ardurak.</span></p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- CV y LinkedIn -->
+      <div class="block-title"><span lang="es">Currículum y LinkedIn</span><span lang="eu">Curriculuma eta LinkedIn</span></div>
+      <div class="grid-2">
+        <a class="card link-card" href="cv.pdf" target="_blank" rel="noopener">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          </div>
+          <div>
+            <h3><span lang="es">Mi CV</span><span lang="eu">Nire CVa</span></h3>
+            <p><span lang="es">Ver o descargar en PDF</span><span lang="eu">PDFan ikusi edo deskargatu</span></p>
+          </div>
+        </a>
+        <a class="card link-card" href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener"> <!-- CAMBIAR -->
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
+          </div>
+          <div>
+            <h3>LinkedIn</h3>
+            <p><span lang="es">Mi perfil profesional</span><span lang="eu">Nire profil profesionala</span></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACTIVIDADES ================= -->
+  <section id="actividades">
+    <div class="wrap">
+      <h2><span lang="es">Actividades</span><span lang="eu">Jarduerak</span></h2>
+      <p class="sub">
+        <span lang="es">Los trabajos realizados en la asignatura de TIC, con su objetivo, el proceso y lo que he aprendido.</span>
+        <span lang="eu">IKT irakasgaian egindako lanak, helburua, prozesua eta ikasitakoa barne.</span>
+      </p>
+      <div class="grid-2">
+        <!-- CAMBIAR: título, descripción, herramientas, enlace y reflexión de cada actividad -->
+        <article class="card activity">
+          <div class="num"><span lang="es">Actividad 1</span><span lang="eu">1. jarduera</span></div>
+          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
+          <p><span lang="es">Resumen breve de en qué consistía el trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
+          <div class="tags"><span class="tag">Canva</span><span class="tag">Google Drive</span></div>
+          <details>
+            <summary><span lang="es">Ver más</span><span lang="eu">Gehiago ikusi</span></summary>
+            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
+            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
+            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
+            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
+            <p style="margin-top:12px"><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+          </details>
+        </article>
+
+        <article class="card activity">
+          <div class="num"><span lang="es">Actividad 2</span><span lang="eu">2. jarduera</span></div>
+          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
+          <p><span lang="es">Resumen breve de en qué consistía el trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
+          <div class="tags"><span class="tag">Word</span><span class="tag">Excel</span></div>
+          <details>
+            <summary><span lang="es">Ver más</span><span lang="eu">Gehiago ikusi</span></summary>
+            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
+            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
+            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
+            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
+            <p style="margin-top:12px"><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+          </details>
+        </article>
+
+        <article class="card activity">
+          <div class="num"><span lang="es">Actividad 3</span><span lang="eu">3. jarduera</span></div>
+          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
+          <p><span lang="es">Resumen breve de en qué consistía el trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
+          <div class="tags"><span class="tag">PowerPoint</span><span class="tag">YouTube</span></div>
+          <details>
+            <summary><span lang="es">Ver más</span><span lang="eu">Gehiago ikusi</span></summary>
+            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
+            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
+            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
+            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
+            <p style="margin-top:12px"><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+          </details>
+        </article>
+
+        <article class="card activity">
+          <div class="num"><span lang="es">Actividad 4</span><span lang="eu">4. jarduera</span></div>
+          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
+          <p><span lang="es">Resumen breve de en qué consistía el trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
+          <div class="tags"><span class="tag">ChatGPT</span><span class="tag">Genially</span></div>
+          <details>
+            <summary><span lang="es">Ver más</span><span lang="eu">Gehiago ikusi</span></summary>
+            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
+            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
+            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
+            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
+            <p style="margin-top:12px"><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= USO DE IA ================= -->
+  <section id="ia">
+    <div class="wrap">
+      <h2><span lang="es">Uso de la inteligencia artificial</span><span lang="eu">Adimen artifizialaren erabilera</span></h2>
+      <p class="sub">
+        <span lang="es">Qué herramientas de IA he utilizado, para qué y cómo he revisado sus resultados.</span>
+        <span lang="eu">Zein AA tresna erabili ditudan, zertarako eta haien emaitzak nola berrikusi ditudan.</span>
+      </p>
+
+      <div class="card table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span lang="es">Herramienta</span><span lang="eu">Tresna</span></th>
+              <th><span lang="es">Para qué la he usado</span><span lang="eu">Zertarako erabili dut</span></th>
+              <th><span lang="es">Actividad</span><span lang="eu">Jarduera</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CAMBIAR: añade o borra filas -->
+            <tr>
+              <td><strong>ChatGPT / Claude</strong></td>
+              <td><span lang="es">Generar ideas y revisar la redacción de textos.</span><span lang="eu">Ideiak sortu eta testuen idazkera berrikusi.</span></td>
+              <td>1, 4</td>
+            </tr>
+            <tr>
+              <td><strong>Canva IA</strong></td>
+              <td><span lang="es">Crear imágenes y diseños para presentaciones.</span><span lang="eu">Aurkezpenetarako irudiak eta diseinuak sortu.</span></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><strong>DeepL</strong></td>
+              <td><span lang="es">Apoyo en la traducción castellano–euskera.</span><span lang="eu">Gaztelania–euskara itzulpenerako laguntza.</span></td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="margin-top:20px">
+        <div class="card">
+          <h3><span lang="es">Cómo la he usado</span><span lang="eu">Nola erabili dudan</span></h3>
+          <ul class="principles">
+            <li><span lang="es">Como apoyo, no como sustituto de mi propio trabajo.</span><span lang="eu">Laguntza gisa, ez nire lanaren ordezko gisa.</span></li>
+            <li><span lang="es">Comprobando siempre la información en fuentes fiables.</span><span lang="eu">Informazioa beti iturri fidagarrietan egiaztatuz.</span></li>
+            <li><span lang="es">Indicando cuándo un contenido se ha hecho con IA.</span><span lang="eu">Edukia AArekin egin denean adieraziz.</span></li>
+            <li><span lang="es">Sin compartir datos personales ni de terceros.</span><span lang="eu">Datu pertsonalik edo besteen daturik partekatu gabe.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span lang="es">Mi reflexión</span><span lang="eu">Nire gogoeta</span></h3>
+          <!-- CAMBIAR: tu opinión personal sobre la IA -->
+          <p style="margin:0;color:var(--muted)">
+            <span lang="es">La IA me ha ayudado a ahorrar tiempo en tareas repetitivas, pero también he visto que comete errores y que hay que revisar todo lo que genera. Escribe aquí tu propia conclusión.</span>
+            <span lang="eu">AAk denbora aurrezten lagundu dit zeregin errepikakorretan, baina akatsak egiten dituela ere ikusi dut, eta sortzen duen guztia berrikusi behar da. Idatzi hemen zure ondorioa.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tu Nombre</span> <!-- CAMBIAR -->
+    <span>
+      <a href="mailto:irunemps@gmail.com">irunemps@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // ---- Cambio de idioma ----
+  const root = document.documentElement;
+  const titles = { es: "Portafolio TIC · Tu Nombre", eu: "IKT portfolioa · Tu Nombre" }; // CAMBIAR
+  function setLang(lang){
+    root.lang = lang;
+    root.dataset.lang = lang;
+    document.title = titles[lang];
+    document.querySelectorAll(".lang button").forEach(b =>
+      b.setAttribute("aria-pressed", b.dataset.set === lang));
+    try { const u = new URL(location.href); u.searchParams.set("lang", lang); history.replaceState(null, "", u); } catch(e){}
+  }
+  document.querySelectorAll(".lang button").forEach(b =>
+    b.addEventListener("click", () => setLang(b.dataset.set)));
+  try { const p = new URLSearchParams(location.search).get("lang"); if (p === "eu" || p === "es") setLang(p); } catch(e){}
+
+  // ---- Menú móvil ----
+  const nav = document.getElementById("nav"), menuBtn = document.getElementById("menuBtn");
+  menuBtn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+  });
+  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
+
+  // ---- Resaltar sección activa en el menú ----
+  const links = [...nav.querySelectorAll("a")];
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + e.target.id));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  ["inicio","presentacion","actividades","ia"].forEach(id => io.observe(document.getElementById(id)));
+</script>
+</body>
+</html>
