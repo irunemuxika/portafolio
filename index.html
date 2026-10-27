@@ -247,6 +247,26 @@
   .saberes strong{color:var(--text)}
   .saberes li::marker{color:var(--clay);font-weight:700}
   dialog{max-height:88vh;overflow-y:auto}
+  /* Página de actividad */
+  .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
+  .back:hover{color:var(--accent)}
+  .act-page{max-width:800px}
+  .act-page .tags{margin:0 0 28px}
+  .act-body{padding:36px 40px}
+  .act-body h4{margin:30px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--clay)}
+  .act-body h4:first-child{margin-top:0}
+  .act-body p{margin:0;color:var(--muted)}
+  .act-body strong{color:var(--text)}
+  .quote-box{margin:18px 0 0;padding:22px 26px;border-left:4px solid var(--clay);background:var(--clay-soft);border-radius:0 16px 16px 0;
+    font-family:var(--serif);font-size:20px;line-height:1.5}
+  .quote-box cite{display:block;margin-top:12px;font-family:var(--sans);font-style:normal;font-size:14px;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 16px}
+  .stats div{background:var(--accent-soft);border-radius:16px;padding:18px 20px;color:var(--text);font-weight:500;line-height:1.35}
+  .stats b{display:block;font-family:var(--serif);font-size:40px;line-height:1;color:var(--accent);margin-bottom:6px}
+  .act-pager{max-width:800px;display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+  .act-pager a{font-weight:600;text-decoration:none}
+  .act-pager a.next{margin-left:auto}
+  @media (max-width:560px){.act-body{padding:24px 22px}.stats{grid-template-columns:1fr}}
   .close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:18px;cursor:pointer}
 
   /* ---------- Uso de IA ---------- */
@@ -451,7 +471,7 @@
     <div class="view" id="actividades" hidden>
       <p class="eyebrow">02</p>
       <h2 class="page-title"><span lang="es">Actividades</span><span lang="eu">Jarduerak</span></h2>
-      <p class="sub"><span lang="es">Los trabajos de la asignatura de TIC. Pulsa en cada uno para ver el detalle.</span><span lang="eu">IKT irakasgaiko lanak. Sakatu bakoitzean xehetasunak ikusteko.</span></p>
+      <p class="sub"><span lang="es">Los trabajos de la asignatura de TIC. Pulsa en cada uno para verlo completo.</span><span lang="eu">IKT irakasgaiko lanak. Sakatu bakoitzean osorik ikusteko.</span></p>
 
       <div class="acts">
         <!-- CAMBIAR: título, resumen, herramientas y el bloque .detail de cada actividad -->
@@ -460,12 +480,14 @@
           <h3><span lang="es">Padlet: Psicología en 1º de Bachillerato</span><span lang="eu">Padlet: Psikologia Batxilergoko 1. mailan</span></h3>
           <p><span lang="es">Muro colaborativo para trabajar los orígenes, los métodos y los campos de la psicología.</span><span lang="eu">Psikologiaren jatorria, metodoak eta eremuak lantzeko horma kolaboratiboa.</span></p>
           <span class="tags"><span class="tag">Padlet</span><span class="tag"><span lang="es">Psicología</span><span lang="eu">Psikologia</span></span><span class="tag"><span lang="es">1º Bachillerato</span><span lang="eu">Batxilergoko 1. maila</span></span></span>
-          <span class="go"><span lang="es">Ver detalle →</span><span lang="eu">Xehetasunak →</span></span>
+          <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
+            <h4><span lang="es">Introducción</span><span lang="eu">Sarrera</span></h4>
+            <p><span lang="es">En esta práctica vamos a utilizar <a href="https://es.padlet.com/" target="_blank" rel="noopener">Padlet</a> como herramienta para promover la colaboración y la interacción en entornos educativos. A través de este recurso digital, los futuros docentes vamos a poder diseñar experiencias de aprendizaje participativas en las que el alumnado construya y comparta conocimiento de forma conjunta.</span><span lang="eu">Praktika honetan <a href="https://es.padlet.com/" target="_blank" rel="noopener">Padlet</a> erabiliko dugu hezkuntza-inguruneetan lankidetza eta elkarreragina sustatzeko tresna gisa. Baliabide digital honen bidez, etorkizuneko irakasleok ikaskuntza-esperientzia parte-hartzaileak diseinatu ahal izango ditugu, ikasleek ezagutza elkarrekin eraiki eta partekatu dezaten.</span></p>
             <h4><span lang="es">¿Qué es Padlet y para qué se utiliza?</span><span lang="eu">Zer da Padlet eta zertarako erabiltzen da?</span></h4>
             <p><span lang="es">Padlet es una herramienta digital colaborativa que funciona como un muro o tablón virtual. Permite publicar y organizar textos, imágenes, vídeos, enlaces y documentos, y que el alumnado participe en tiempo real. En el aula se utiliza para recopilar ideas, organizar contenidos, compartir recursos y fomentar el trabajo cooperativo.</span><span lang="eu">Padlet lankidetzarako tresna digitala da, horma edo arbel birtual baten moduan funtzionatzen duena. Testuak, irudiak, bideoak, estekak eta dokumentuak argitaratu eta antolatzeko aukera ematen du, eta ikasleek denbora errealean parte har dezakete. Ikasgelan ideiak biltzeko, edukiak antolatzeko, baliabideak partekatzeko eta lankidetza sustatzeko erabiltzen da.</span></p>
             <h4><span lang="es">La práctica</span><span lang="eu">Praktika</span></h4>
-            <p><span lang="es">La práctica consiste en simular que somos profesorado de una materia relacionada con nuestra especialidad, en este caso <strong>Psicología</strong>, con alumnado de <strong>1º de Bachillerato</strong>. Concretamente, trabajamos el primer bloque de saberes básicos del currículo educativo vasco:</span><span lang="eu">Praktika gure espezialitatearekin lotutako irakasgai bateko irakasleak garela simulatzean datza, kasu honetan <strong>Psikologia</strong>, <strong>Batxilergoko 1. mailako</strong> ikasleekin. Zehazki, Euskal curriculumeko oinarrizko jakintzen lehen blokea lantzen dugu:</span></p>
+            <p><span lang="es">En concreto, la práctica consiste en simular que somos profesorado de una materia relacionada con nuestra especialidad, en este caso <strong>Psicología</strong>, con alumnado de <strong>1º de Bachillerato</strong>. Para ello, trabajamos el primer bloque de saberes básicos del currículo educativo vasco:</span><span lang="eu">Zehazki, praktika gure espezialitatearekin lotutako irakasgai bateko irakasleak garela simulatzean datza, kasu honetan <strong>Psikologia</strong>, <strong>Batxilergoko 1. mailako</strong> ikasleekin. Euskal curriculumeko oinarrizko jakintzen lehen blokea lantzen dugu:</span></p>
             <ol class="saberes">
               <li><span lang="es"><strong>Génesis y principios de la psicología.</strong> Raíces filosóficas de la psicología. La naturaleza de la psicología y sus principales controversias. Diferencias entre psicología y psiquiatría.</span><span lang="eu"><strong>Psikologiaren sorrera eta printzipioak.</strong> Psikologiaren erro filosofikoak. Psikologiaren izaera eta haren eztabaida nagusiak. Psikologiaren eta psikiatriaren arteko desberdintasunak.</span></li>
               <li><span lang="es"><strong>Técnicas básicas de psicología.</strong> Definición de psicología, campo de investigación, ámbitos y métodos. Principales escuelas de psicología.</span><span lang="eu"><strong>Psikologiako oinarrizko teknikak.</strong> Psikologiaren definizioa, ikerketa-eremua, esparruak eta metodoak. Psikologiako eskola nagusiak.</span></li>
@@ -477,17 +499,25 @@
 
         <button class="card act" type="button">
           <span class="n">02</span>
-          <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
-          <p><span lang="es">Resumen breve del trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
-          <span class="tags"><span class="tag">Word</span><span class="tag">Excel</span></span>
-          <span class="go"><span lang="es">Ver detalle →</span><span lang="eu">Xehetasunak →</span></span>
+          <h3><span lang="es">Gamificación y aplicación en el aula</span><span lang="eu">Gamifikazioa eta ikasgelan aplikatzea</span></h3>
+          <p><span lang="es">Logros, feedback y recompensas como elementos de juego para motivar al alumnado.</span><span lang="eu">Lorpenak, feedbacka eta sariak, ikasleak motibatzeko joko-elementu gisa.</span></p>
+          <span class="tags"><span class="tag"><span lang="es">Gamificación</span><span lang="eu">Gamifikazioa</span></span><span class="tag">Hearthstone Card Generator</span></span>
+          <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
-            <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
-            <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
-            <h4><span lang="es">Qué he aprendido</span><span lang="eu">Zer ikasi dudan</span></h4>
-            <p><span lang="es">Tu reflexión personal.</span><span lang="eu">Zure gogoeta pertsonala.</span></p>
-            <h4><span lang="es">Trabajo</span><span lang="eu">Lana</span></h4>
-            <p><a href="#" target="_blank" rel="noopener"><span lang="es">Ver el trabajo ↗</span><span lang="eu">Lana ikusi ↗</span></a></p>
+            <h4><span lang="es">¿Qué es gamificar en el aula?</span><span lang="eu">Zer da ikasgelan gamifikatzea?</span></h4>
+            <p><span lang="es">Puede definirse como el uso de elementos de juego en entornos que no son de juego (Deterding et al., 2011).</span><span lang="eu">Jokoak ez diren inguruneetan joko-elementuak erabiltzea bezala defini daiteke (Deterding et al., 2011).</span></p>
+            <blockquote class="quote-box">
+              <span lang="es">«La utilización de mecanismos, la estética y el uso del pensamiento, para atraer a las personas, incitar a la acción, promover el aprendizaje y resolver problemas.»</span><span lang="eu">«Mekanismoak, estetika eta pentsamendua erabiltzea, pertsonak erakartzeko, ekintzara bultzatzeko, ikaskuntza sustatzeko eta arazoak konpontzeko.»</span>
+              <cite><span lang="es">Karl Kapp (2012), definición de gamificación en su libro <em>The Gamification of Learning and Instruction: Game-based Methods and Strategies for Training and Education</em>.</span><span lang="eu">Karl Kapp (2012), gamifikazioaren definizioa <em>The Gamification of Learning and Instruction: Game-based Methods and Strategies for Training and Education</em> liburuan.</span></cite>
+            </blockquote>
+            <h4><span lang="es">La práctica</span><span lang="eu">Praktika</span></h4>
+            <p><span lang="es">En esta práctica vamos a explorar los <strong>logros</strong>, el <strong>feedback</strong> y las <strong>recompensas</strong> como elementos de juego para introducir la gamificación en el aula. Para ello, utilizaremos la herramienta <a href="http://www.hearthcards.net/" target="_blank" rel="noopener">Hearthstone Card Generator</a>.</span><span lang="eu">Praktika honetan <strong>lorpenak</strong>, <strong>feedbacka</strong> eta <strong>sariak</strong> aztertuko ditugu joko-elementu gisa, ikasgelan gamifikazioa txertatzeko. Horretarako, <a href="http://www.hearthcards.net/" target="_blank" rel="noopener">Hearthstone Card Generator</a> tresna erabiliko dugu.</span></p>
+            <h4><span lang="es">¿Qué se pide?</span><span lang="eu">Zer eskatzen da?</span></h4>
+            <div class="stats">
+              <div><b>4</b><span lang="es">cartas de logros a conseguir</span><span lang="eu">lortu beharreko lorpen-karta</span></div>
+              <div><b>2</b><span lang="es">cartas de recompensa por las que canjearlos</span><span lang="eu">horiek trukatzeko sari-karta</span></div>
+            </div>
+            <p><span lang="es">La propuesta se centra en los refuerzos positivos y negativos. Cada carta incluye una breve explicación del logro o de la recompensa y la puntuación que se otorga, con ejemplos específicos de la especialidad del máster.</span><span lang="eu">Proposamena errefortzu positibo eta negatiboetan oinarritzen da. Karta bakoitzak lorpenaren edo sariaren azalpen laburra eta ematen den puntuazioa jasotzen ditu, masterreko espezialitateari lotutako adibide zehatzekin.</span></p>
           </span>
         </button>
 
@@ -496,7 +526,7 @@
           <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
           <p><span lang="es">Resumen breve del trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
           <span class="tags"><span class="tag">PowerPoint</span><span class="tag">YouTube</span></span>
-          <span class="go"><span lang="es">Ver detalle →</span><span lang="eu">Xehetasunak →</span></span>
+          <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
             <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
             <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
@@ -512,7 +542,7 @@
           <h3><span lang="es">Título de la actividad</span><span lang="eu">Jardueraren izenburua</span></h3>
           <p><span lang="es">Resumen breve del trabajo.</span><span lang="eu">Lanaren laburpen laburra.</span></p>
           <span class="tags"><span class="tag">Genially</span></span>
-          <span class="go"><span lang="es">Ver detalle →</span><span lang="eu">Xehetasunak →</span></span>
+          <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
             <h4><span lang="es">Objetivo</span><span lang="eu">Helburua</span></h4>
             <p><span lang="es">Qué se pedía.</span><span lang="eu">Zer eskatzen zen.</span></p>
@@ -523,6 +553,13 @@
           </span>
         </button>
       </div>
+    </div>
+
+    <!-- ================= PÁGINA DE CADA ACTIVIDAD (se rellena sola) ================= -->
+    <div class="view" id="actividad" hidden>
+      <a class="back" href="#actividades"><span lang="es">← Volver a actividades</span><span lang="eu">← Jardueretara itzuli</span></a>
+      <article class="act-page" id="actPage"></article>
+      <div class="act-pager" id="actPager"></div>
     </div>
 
     <!-- ================= USO DE IA ================= -->
@@ -602,10 +639,6 @@
   </div>
 </footer>
 
-<dialog id="dlg">
-  <button class="close" id="dlgClose" aria-label="Cerrar">✕</button>
-  <div class="dlg" id="dlgBody"></div>
-</dialog>
 
 <script>
   const root = document.documentElement;
@@ -624,8 +657,10 @@
   const views = ["inicio","presentacion","actividades","ia"];
   const nav = document.getElementById("nav"), menuBtn = document.getElementById("menuBtn");
   function show(id){
-    if (!views.includes(id)) id = "inicio";
-    const viewId = id === "presentacion" ? "inicio" : id;
+    const am = /^actividad-(\d+)$/.exec(id);
+    if (am && renderActivity(+am[1])) id = "actividades";
+    else if (!views.includes(id)) id = "inicio";
+    const viewId = am && id === "actividades" ? "actividad" : (id === "presentacion" ? "inicio" : id);
     document.querySelectorAll(".view").forEach(v => v.hidden = v.id !== viewId);
     nav.querySelectorAll("a").forEach(a => a.classList.toggle("active", a.dataset.view === id));
     document.getElementById("iaBtn").classList.toggle("active", id === "ia");
@@ -643,18 +678,22 @@
     new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { htl.classList.add("in"); o.disconnect(); } }), { threshold: .3 }).observe(htl);
   } else htl.classList.add("in");
 
-  /* ---- Ventana de detalle de actividades ---- */
-  const dlg = document.getElementById("dlg"), body = document.getElementById("dlgBody");
-  document.querySelectorAll(".act").forEach(card => card.addEventListener("click", () => {
-    body.innerHTML =
+  /* ---- Página de cada actividad ---- */
+  function renderActivity(n){
+    const cards = document.querySelectorAll(".act"), card = cards[n-1];
+    if (!card) return false;
+    document.getElementById("actPage").innerHTML =
       '<p class="eyebrow">' + card.querySelector(".n").textContent + '</p>' +
-      '<h3>' + card.querySelector("h3").innerHTML + '</h3>' +
-      '<p>' + card.querySelector("p").innerHTML + '</p>' +
-      card.querySelector(".detail").innerHTML;
-    dlg.showModal();
-  }));
-  document.getElementById("dlgClose").addEventListener("click", () => dlg.close());
-  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+      '<h2 class="page-title">' + card.querySelector("h3").innerHTML + '</h2>' +
+      '<p class="sub">' + card.querySelector("p").innerHTML + '</p>' +
+      '<div class="tags">' + card.querySelector(".tags").innerHTML + '</div>' +
+      '<div class="card act-body">' + card.querySelector(".detail").innerHTML + '</div>';
+    const pager = document.getElementById("actPager"); pager.innerHTML = "";
+    if (n > 1) pager.innerHTML += '<a href="#actividad-' + (n-1) + '"><span lang="es">← Actividad anterior</span><span lang="eu">← Aurreko jarduera</span></a>';
+    if (n < cards.length) pager.innerHTML += '<a class="next" href="#actividad-' + (n+1) + '"><span lang="es">Siguiente actividad →</span><span lang="eu">Hurrengo jarduera →</span></a>';
+    return true;
+  }
+  document.querySelectorAll(".act").forEach((card, i) => card.addEventListener("click", () => { location.hash = "actividad-" + (i+1); }));
 </script>
 </body>
 </html>
