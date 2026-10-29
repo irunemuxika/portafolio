@@ -474,6 +474,16 @@
   .cv-card.c1{margin:-76px 0 0 -6px;transform:rotate(8deg)}
   .act:hover .cv-card.c0{transform:rotate(-14deg) translateX(-8px)}
   .act:hover .cv-card.c1{transform:rotate(13deg) translateX(8px)}
+  .cv-art{position:absolute;left:50%;top:50%;width:230px;margin:-74px 0 0 -100px;transform:rotate(-3deg);filter:drop-shadow(0 10px 16px rgba(40,30,20,.18));transition:transform .4s}
+  .act:hover .cv-art{transform:rotate(0) scale(1.04)}
+  .pboard{display:block;width:100%;height:auto;overflow:visible}
+  .pboard .pn{animation:pop 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  .pboard .n1{animation-delay:0s}.pboard .n3{animation-delay:.5s}.pboard .n5{animation-delay:1s}.pboard .n2{animation-delay:1.5s}.pboard .n4{animation-delay:2s}.pboard .n6{animation-delay:2.5s}
+  @keyframes pop{0%,8%{opacity:0;transform:scale(.6)}16%,88%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.9)}}
+  .pboard .cursor{animation:cur 6s ease-in-out infinite}
+  @keyframes cur{0%{transform:translate(60px,90px)}25%{transform:translate(130px,100px)}50%{transform:translate(200px,80px)}75%{transform:translate(110px,140px)}100%{transform:translate(60px,90px)}}
+  .act-art.board .pboard{position:absolute;left:50%;top:50%;width:240px;margin:-85px 0 0 -120px;transform:rotate(-3deg);filter:drop-shadow(0 12px 18px rgba(40,30,20,.2))}
+  @media (prefers-reduced-motion:reduce){.pboard .pn{opacity:1;transform:none}}
   .st{position:absolute;top:16px;left:18px;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;background:var(--surface);box-shadow:var(--shadow)}
   .st.ok{color:var(--accent)}.st.soon{color:var(--muted)}
   .act-body-c{display:flex;flex-direction:column;flex:1;padding:22px 26px 24px}
@@ -766,7 +776,7 @@
       <div class="acts">
         <!-- CAMBIAR: título, resumen, herramientas y el bloque .detail de cada actividad -->
         <button class="card act" type="button">
-          <span class="act-cover"><span class="cv-blob"></span><span class="n">01</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h4M7 14h6"/><rect x="14" y="9" width="3.5" height="4.5" rx=".6"/><circle cx="12" cy="4.5" r="1.3"/></svg></span><span class="twk s1">✦</span></span>
+          <span class="act-cover"><span class="cv-blob"></span><span class="n">01</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h4M7 14h6"/><rect x="14" y="9" width="3.5" height="4.5" rx=".6"/><circle cx="12" cy="4.5" r="1.3"/></svg></span><span class="cv-art"><svg class="pboard" viewBox="0 0 240 170" aria-hidden="true"> <rect x="4" y="6" width="232" height="158" rx="14" fill="#fffdf9" stroke="#e9e1d6" stroke-width="2"/> <rect x="4" y="6" width="232" height="26" rx="14" fill="#3d6b5c"/><rect x="4" y="20" width="232" height="12" fill="#3d6b5c"/> <circle cx="18" cy="19" r="4" fill="#f6e3b4"/><rect x="28" y="15" width="70" height="8" rx="4" fill="#e4eee8"/> <rect x="196" y="13" width="30" height="12" rx="6" fill="#c26e4c"/> <g font-family="Inter,Arial,sans-serif" font-size="8" font-weight="700" fill="#6f655d"> <text x="16" y="47">1 · Génesis</text><text x="91" y="47">2 · Técnicas</text><text x="166" y="47">3 · Realidad</text> </g> <g class="pn n1"><rect x="14" y="54" width="64" height="42" rx="7" fill="#f6e6dc"/><rect x="20" y="61" width="40" height="5" rx="2.5" fill="#c26e4c"/><rect x="20" y="71" width="50" height="4" rx="2" fill="#e0c2b0"/><rect x="20" y="79" width="42" height="4" rx="2" fill="#e0c2b0"/></g> <g class="pn n2"><rect x="14" y="102" width="64" height="52" rx="7" fill="#e4eee8"/><rect x="20" y="108" width="52" height="24" rx="4" fill="#9cc0b1"/><circle cx="34" cy="120" r="5" fill="#fffdf9"/><path d="M42 131l10-10 14 11z" fill="#3d6b5c"/><rect x="20" y="138" width="40" height="4" rx="2" fill="#b9d0c6"/></g> <g class="pn n3"><rect x="88" y="54" width="64" height="58" rx="7" fill="#fff1a8"/><rect x="94" y="61" width="36" height="5" rx="2.5" fill="#8a6a1f"/><rect x="94" y="71" width="52" height="4" rx="2" fill="#e8d78a"/><rect x="94" y="79" width="48" height="4" rx="2" fill="#e8d78a"/><rect x="94" y="87" width="40" height="4" rx="2" fill="#e8d78a"/><circle cx="140" cy="102" r="5" fill="#c26e4c"/></g> <g class="pn n4"><rect x="88" y="118" width="64" height="36" rx="7" fill="#f6e6dc"/><rect x="94" y="125" width="46" height="5" rx="2.5" fill="#c26e4c"/><rect x="94" y="135" width="52" height="4" rx="2" fill="#e0c2b0"/></g> <g class="pn n5"><rect x="162" y="54" width="64" height="44" rx="7" fill="#e4eee8"/><rect x="168" y="61" width="44" height="5" rx="2.5" fill="#3d6b5c"/><rect x="168" y="71" width="52" height="4" rx="2" fill="#b9d0c6"/><rect x="168" y="79" width="36" height="4" rx="2" fill="#b9d0c6"/><path d="M168 89h10l-3-3m3 3l-3 3" stroke="#3d6b5c" stroke-width="1.6" fill="none" stroke-linecap="round"/></g> <g class="pn n6"><rect x="162" y="104" width="64" height="50" rx="7" fill="#fff1a8"/><rect x="168" y="111" width="40" height="5" rx="2.5" fill="#8a6a1f"/><rect x="168" y="121" width="50" height="4" rx="2" fill="#e8d78a"/><rect x="168" y="129" width="44" height="4" rx="2" fill="#e8d78a"/><path d="M176 145c2-4 7-4 7 0 0-4 5-4 7 0-2 4-7 6-7 6s-5-2-7-6z" fill="#c26e4c"/></g> <g class="cursor"><path d="M0 0l0 14 4-4 3 7 3-1-3-7 6 0z" fill="#2b2522" stroke="#fff" stroke-width="1.2"/></g> </svg> </span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
           <h3><span lang="es">Padlet: Psicología en 2º de Bachillerato</span><span lang="eu">Padlet: Psikologia Batxilergoko 2. mailan</span></h3>
           <p><span lang="es">Muro colaborativo para trabajar los orígenes, los métodos y los campos de la psicología.</span><span lang="eu">Psikologiaren jatorria, metodoak eta eremuak lantzeko horma kolaboratiboa.</span></p>
@@ -1169,7 +1179,9 @@
       '</div>' +
       (card.querySelector(".card-gallery img")
         ? '<div class="act-art fan" aria-hidden="true"><span class="blob"></span>' + [...card.querySelectorAll(".card-gallery img")].slice(0,3).map((im,k) => '<img class="fan-c f' + k + '" src="' + im.getAttribute("src") + '" alt="">').join("") + '<span class="twk s1">✦</span><span class="twk s2">✦</span></div></div>'
-        : '<div class="act-art" aria-hidden="true"><span class="blob"></span><span class="big-ico">' + card.querySelector(".act-ico").innerHTML + '</span>' +
+        : card.querySelector(".cv-art")
+        ? '<div class="act-art board" aria-hidden="true"><span class="blob"></span>' + card.querySelector(".cv-art").innerHTML + '<span class="twk s1">✦</span><span class="twk s2">✦</span></div></div>'
+        : '<div class="act-art" aria-hidden="true"><span class="blob"></span><span class="big-ico">' + (card.querySelector(".act-ico") || {innerHTML:""}).innerHTML + '</span>' +
           '<span class="twk s1">✦</span><span class="twk s2">✦</span><span class="dot-d d1"></span><span class="dot-d d2"></span></div></div>') +
       '<div class="act-flow">' + buildBody(card.querySelector(".detail")) + '</div>';
     const pager = document.getElementById("actPager"); pager.innerHTML = "";
@@ -1179,10 +1191,7 @@
   }
 
   document.querySelectorAll(".act").forEach((card) => {
-    const done = !card.querySelector(".detail").innerHTML.includes("CAMBIAR: añadir aquí la práctica");
-    card.querySelector(".act-cover").insertAdjacentHTML("beforeend", done
-      ? '<span class="st ok"><span lang="es">✓ Completada</span><span lang="eu">✓ Osatua</span></span>'
-      : '<span class="st soon"><span lang="es">En preparación</span><span lang="eu">Prestatzen</span></span>');
+    if (card.querySelector(".cv-art")) card.querySelector(".act-ico").remove();
     const imgs = [...card.querySelectorAll(".card-gallery img")].slice(0, 2);
     if (imgs.length) { card.querySelector(".act-ico").remove(); imgs.forEach((im, k) => card.querySelector(".act-cover").insertAdjacentHTML("beforeend", '<img class="cv-card c' + k + '" src="' + im.getAttribute("src") + '" alt="">')); }
   });
