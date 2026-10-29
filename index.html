@@ -373,6 +373,33 @@
   .res-txt strong{display:block;font-family:var(--serif);font-size:18px;font-weight:600}
   .res-d{display:block;color:var(--muted);font-size:14.5px;line-height:1.5;margin:3px 0 6px}
   .res-txt small{color:var(--accent);font-weight:600;font-size:12.5px}
+  /* Página de actividad: bloques fáciles de leer */
+  .act-meta{margin:-10px 0 22px}
+  .read{display:inline-block;background:var(--sun);color:#7a5b16;border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600}
+  .ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 18px}
+  .fi-i{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow);animation:fadeup .5s both}
+  .fi-i small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);margin-bottom:3px}
+  .fi-i b{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.25}
+  .blk{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px 32px;margin-bottom:16px;box-shadow:var(--shadow);
+    animation:fadeup .6s both;animation-delay:calc(var(--d) * .12s + .1s)}
+  @keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .blk-h{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .blk-ico{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+  .blk:nth-of-type(even) .blk-ico{background:var(--clay-soft);color:var(--clay)}
+  .blk h4{margin:0;font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+  .blk-c p{margin:0 0 10px;color:var(--muted);line-height:1.75;max-width:68ch}
+  .blk-c p:last-child{margin-bottom:0}
+  .blk-c strong{color:var(--text)}
+  .blk.intro{background:linear-gradient(135deg,var(--accent-soft),var(--surface) 70%);border-left:5px solid var(--accent)}
+  .blk.intro .blk-c p{font-size:18px;color:var(--text);line-height:1.7}
+  .blk .saberes{list-style:none;counter-reset:sab;padding:0;margin:16px 0 6px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;font-size:14.5px}
+  .blk .saberes li{counter-increment:sab;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 18px 18px;line-height:1.55}
+  .blk .saberes li::before{content:counter(sab);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--clay);color:#fff;
+    font-family:var(--serif);font-weight:600;margin-bottom:10px}
+  .blk .saberes strong{display:block;margin-bottom:4px;font-size:15px}
+  .blk .quote-box{margin-top:14px}
+  .blk .stats{margin-top:10px}
+  @media (max-width:560px){.blk{padding:22px 20px}.blk h4{font-size:19px}}
   .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
   .back:hover{color:var(--accent)}
   .act-page{max-width:800px}
@@ -664,6 +691,7 @@
           <span class="tags"><span class="tag">Padlet</span><span class="tag"><span lang="es">Psicología</span><span lang="eu">Psikologia</span></span><span class="tag"><span lang="es">1º Bachillerato</span><span lang="eu">Batxilergoko 1. maila</span></span></span>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
+            <span class="ficha"><span class="fi-i"><small><span lang="es">Herramienta</span><span lang="eu">Tresna</span></small><b>Padlet</b></span><span class="fi-i"><small><span lang="es">Nivel</span><span lang="eu">Maila</span></small><b><span lang="es">1º Bachillerato</span><span lang="eu">Batxilergoko 1. maila</span></b></span><span class="fi-i"><small><span lang="es">Materia</span><span lang="eu">Irakasgaia</span></small><b><span lang="es">Psicología</span><span lang="eu">Psikologia</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Aprendizaje colaborativo</span><span lang="eu">Lankidetzazko ikaskuntza</span></b></span></span>
             <h4><span lang="es">Introducción</span><span lang="eu">Sarrera</span></h4>
             <p><span lang="es">En esta práctica vamos a utilizar <a href="https://es.padlet.com/" target="_blank" rel="noopener">Padlet</a> como herramienta para promover la colaboración y la interacción en entornos educativos. A través de este recurso digital, los futuros docentes vamos a poder diseñar experiencias de aprendizaje participativas en las que el alumnado construya y comparta conocimiento de forma conjunta.</span><span lang="eu">Praktika honetan <a href="https://es.padlet.com/" target="_blank" rel="noopener">Padlet</a> erabiliko dugu hezkuntza-inguruneetan lankidetza eta elkarreragina sustatzeko tresna gisa. Baliabide digital honen bidez, etorkizuneko irakasleok ikaskuntza-esperientzia parte-hartzaileak diseinatu ahal izango ditugu, ikasleek ezagutza elkarrekin eraiki eta partekatu dezaten.</span></p>
             <h4><span lang="es">¿Qué es Padlet y para qué se utiliza?</span><span lang="eu">Zer da Padlet eta zertarako erabiltzen da?</span></h4>
@@ -687,6 +715,7 @@
           <span class="tags"><span class="tag"><span lang="es">Gamificación</span><span lang="eu">Gamifikazioa</span></span><span class="tag">Hearthstone Card Generator</span></span>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
+            <span class="ficha"><span class="fi-i"><small><span lang="es">Herramienta</span><span lang="eu">Tresna</span></small><b>Hearthstone Card Generator</b></span><span class="fi-i"><small><span lang="es">Elementos de juego</span><span lang="eu">Joko-elementuak</span></small><b><span lang="es">Logros, feedback y recompensas</span><span lang="eu">Lorpenak, feedbacka eta sariak</span></b></span><span class="fi-i"><small><span lang="es">Entrega</span><span lang="eu">Entregatzekoa</span></small><b><span lang="es">4 cartas de logro + 2 de recompensa</span><span lang="eu">4 lorpen-karta + 2 sari-karta</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Gamificación</span><span lang="eu">Gamifikazioa</span></b></span></span>
             <h4><span lang="es">¿Qué es gamificar en el aula?</span><span lang="eu">Zer da ikasgelan gamifikatzea?</span></h4>
             <p><span lang="es">Puede definirse como el uso de elementos de juego en entornos que no son de juego (Deterding et al., 2011).</span><span lang="eu">Jokoak ez diren inguruneetan joko-elementuak erabiltzea bezala defini daiteke (Deterding et al., 2011).</span></p>
             <blockquote class="quote-box">
@@ -712,6 +741,7 @@
           <span class="tags"><span class="tag">BYOD</span><span class="tag"><span lang="es">Dispositivos móviles</span><span lang="eu">Gailu mugikorrak</span></span></span>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
+            <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>BYOD</b></span><span class="fi-i"><small><span lang="es">Recursos</span><span lang="eu">Baliabideak</span></small><b><span lang="es">Dispositivos del alumnado</span><span lang="eu">Ikasleen gailuak</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Aprendizaje personalizado</span><span lang="eu">Ikaskuntza pertsonalizatua</span></b></span></span>
             <h4><span lang="es">¿Qué es el modelo BYOD?</span><span lang="eu">Zer da BYOD eredua?</span></h4>
             <p><span lang="es">BYOD (<em>Bring Your Own Device</em>, «trae tu propio dispositivo») es un modelo en el que el alumnado utiliza sus propios dispositivos —móviles, tabletas u ordenadores portátiles— como herramienta de aprendizaje en el aula. Favorece la personalización, el acceso a recursos digitales y la continuidad entre el aprendizaje dentro y fuera del aula, aunque exige planificar aspectos como la equidad de acceso, la conectividad, la seguridad y el uso responsable.</span><span lang="eu">BYOD (<em>Bring Your Own Device</em>, «ekarri zure gailua») ikasleek beren gailuak —mugikorrak, tabletak edo eramangarriak— ikasgelan ikaskuntza-tresna gisa erabiltzen dituzten eredua da. Pertsonalizazioa, baliabide digitaletarako sarbidea eta ikasgela barruko eta kanpoko ikaskuntzaren arteko jarraitutasuna errazten ditu, baina aldez aurretik planifikatu behar dira sarbide-ekitatea, konexioa, segurtasuna eta erabilera arduratsua.</span></p>
             <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
@@ -726,6 +756,7 @@
           <span class="tags"><span class="tag">Flipped Classroom</span><span class="tag"><span lang="es">Aprendizaje activo</span><span lang="eu">Ikaskuntza aktiboa</span></span></span>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           <span class="detail">
+            <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>Flipped Classroom</b></span><span class="fi-i"><small><span lang="es">En casa</span><span lang="eu">Etxean</span></small><b><span lang="es">Teoría: vídeos y lecturas</span><span lang="eu">Teoria: bideoak eta irakurgaiak</span></b></span><span class="fi-i"><small><span lang="es">En el aula</span><span lang="eu">Ikasgelan</span></small><b><span lang="es">Práctica y cooperación</span><span lang="eu">Praktika eta lankidetza</span></b></span></span>
             <h4><span lang="es">¿Qué es la Flipped Classroom?</span><span lang="eu">Zer da Flipped Classroom delakoa?</span></h4>
             <p><span lang="es">En el modelo de clase invertida (<em>Flipped Classroom</em>), el alumnado trabaja los contenidos teóricos fuera del aula —por ejemplo, mediante vídeos o lecturas— y el tiempo de clase se dedica a actividades prácticas, resolución de dudas, trabajo cooperativo y aplicación de lo aprendido. El docente pasa a ser guía y acompañante del proceso de aprendizaje.</span><span lang="eu">Alderantzizko ikasgela ereduan (<em>Flipped Classroom</em>), ikasleek eduki teorikoak ikasgelatik kanpo lantzen dituzte —adibidez, bideoen edo irakurgaien bidez—, eta eskola-denbora jarduera praktikoetarako, zalantzak argitzeko, lankidetzan aritzeko eta ikasitakoa aplikatzeko erabiltzen da. Irakaslea ikaskuntza-prozesuaren gida eta laguntzaile bihurtzen da.</span></p>
             <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
@@ -948,7 +979,7 @@
     else { window.scrollTo(0, 0); setTimeout(() => window.scrollTo(0, 0), 0); }
   }
   window.addEventListener("hashchange", () => show(location.hash.slice(1)));
-  show(location.hash.slice(1));
+  document.addEventListener("DOMContentLoaded", () => show(location.hash.slice(1)));
   menuBtn.addEventListener("click", () => menuBtn.setAttribute("aria-expanded", nav.classList.toggle("open")));
 
   /* ---- Animación de la línea del tiempo al aparecer ---- */
@@ -958,6 +989,34 @@
   } else htl.classList.add("in");
 
   /* ---- Página de cada actividad ---- */
+  const ICONS = {
+    intro: '<path d="M12 3l1.8 5.6L19.5 10l-5.7 1.4L12 17l-1.8-5.6L4.5 10l5.7-1.4z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
+    que: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/>',
+    practica: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+    pide: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/>',
+    otro: '<path d="M2 5c3-1.5 7-1.5 10 1 3-2.5 7-2.5 10-1v14c-3-1.5-7-1.5-10 1-3-2.5-7-2.5-10-1z"/><path d="M12 6v14"/>'
+  };
+  const svgI = d => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>';
+  function buildBody(detail){
+    const wrap = document.createElement("div"); wrap.innerHTML = detail.innerHTML;
+    const ficha = wrap.querySelector(".ficha"); let html = "";
+    if (ficha) { html += '<div class="ficha">' + ficha.innerHTML + '</div>'; ficha.remove(); }
+    const secs = []; let cur = null;
+    [...wrap.childNodes].forEach(nd => {
+      if (nd.nodeType === 1 && nd.tagName === "H4") { cur = { h: nd, parts: [] }; secs.push(cur); }
+      else if (nd.nodeType === 1 || (nd.nodeType === 3 && nd.textContent.trim())) { if (!cur) { cur = { h: null, parts: [] }; secs.push(cur); } cur.parts.push(nd); }
+    });
+    secs.forEach((sc, i) => {
+      const t = sc.h ? ((sc.h.querySelector('[lang="es"]') || sc.h).textContent).toLowerCase() : "";
+      const key = t.includes("introduc") ? "intro" : t.startsWith("¿qué es") ? "que" : t.includes("práctica") ? "practica" : t.includes("pide") ? "pide" : "otro";
+      const content = sc.parts.map(p => p.nodeType === 1 ? p.outerHTML : p.textContent).join("");
+      html += '<section class="blk ' + (key === "intro" ? "intro" : "") + '" style="--d:' + i + '">' +
+        (sc.h ? '<div class="blk-h"><span class="blk-ico">' + svgI(ICONS[key]) + '</span><h4>' + sc.h.innerHTML + '</h4></div>' : '') +
+        '<div class="blk-c">' + content + '</div></section>';
+    });
+    return html;
+  }
+
   function renderActivity(n){
     const cards = document.querySelectorAll(".act"), card = cards[n-1];
     if (!card) return false;
@@ -969,7 +1028,11 @@
       '<div class="tags">' + card.querySelector(".tags").innerHTML + '</div></div>' +
       '<div class="act-art" aria-hidden="true"><span class="blob"></span><span class="big-ico">' + card.querySelector(".act-ico").innerHTML + '</span>' +
       '<span class="twk s1">✦</span><span class="twk s2">✦</span><span class="dot-d d1"></span><span class="dot-d d2"></span></div></div>' +
-      '<div class="card act-body">' + card.querySelector(".detail").innerHTML + '</div>';
+      '<div class="act-meta"><span class="read"><span lang="es">⏱ __ES__ min de lectura</span><span lang="eu">⏱ __EU__ minutuko irakurketa</span></span></div>' +
+      '<div class="act-flow">' + buildBody(card.querySelector(".detail")) + '</div>';
+    const page = document.getElementById("actPage");
+    const words = l => [...page.querySelectorAll('.act-flow [lang="' + l + '"]')].map(e => e.textContent).join(" ").split(/\s+/).filter(Boolean).length;
+    page.innerHTML = page.innerHTML.replace("__ES__", Math.max(1, Math.round(words("es") / 200))).replace("__EU__", Math.max(1, Math.round(words("eu") / 200)));
     const pager = document.getElementById("actPager"); pager.innerHTML = "";
     if (n > 1) pager.innerHTML += '<a href="#actividad-' + (n-1) + '"><span lang="es">← Actividad anterior</span><span lang="eu">← Aurreko jarduera</span></a>';
     if (n < cards.length) pager.innerHTML += '<a class="next" href="#actividad-' + (n+1) + '"><span lang="es">Siguiente actividad →</span><span lang="eu">Hurrengo jarduera →</span></a>';
