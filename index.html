@@ -350,7 +350,7 @@
   .act{position:relative}
   .act-ico{position:absolute;top:26px;right:26px;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
     background:var(--accent-soft);color:var(--accent);transition:transform .4s}
-  .act:nth-child(even) .act-ico{background:var(--clay-soft);color:var(--clay)}
+  .act:nth-of-type(even) .act-ico{background:var(--clay-soft);color:var(--clay)}
   .act:hover .act-ico{animation:wiggle .7s ease}
   @keyframes wiggle{25%{transform:rotate(-10deg) scale(1.08)}50%{transform:rotate(8deg) scale(1.08)}75%{transform:rotate(-4deg)}}
   .act-head{display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:center;max-width:860px}
@@ -457,10 +457,10 @@
   .acts{gap:26px}
   .act{padding:0 !important;overflow:hidden;border-radius:26px}
   .act-cover{position:relative;display:block;height:190px;overflow:hidden;background:var(--cvb)}
-  .act:nth-child(1){--cvb:linear-gradient(135deg,var(--accent-soft),var(--sun));--cvc:var(--accent)}
-  .act:nth-child(2){--cvb:linear-gradient(135deg,var(--clay-soft),var(--sun));--cvc:var(--clay)}
-  .act:nth-child(3){--cvb:linear-gradient(135deg,var(--sun),var(--accent-soft));--cvc:var(--accent)}
-  .act:nth-child(4){--cvb:linear-gradient(135deg,var(--sun),var(--clay-soft));--cvc:var(--clay)}
+  .act:nth-of-type(1){--cvb:linear-gradient(135deg,var(--accent-soft),var(--sun));--cvc:var(--accent)}
+  .act:nth-of-type(2){--cvb:linear-gradient(135deg,var(--clay-soft),var(--sun));--cvc:var(--clay)}
+  .act:nth-of-type(3){--cvb:linear-gradient(135deg,var(--sun),var(--accent-soft));--cvc:var(--accent)}
+  .act:nth-of-type(4){--cvb:linear-gradient(135deg,var(--sun),var(--clay-soft));--cvc:var(--clay)}
   .act-cover .cv-blob{position:absolute;width:170px;height:170px;left:50%;top:50%;margin:-85px 0 0 -85px;background:var(--surface);opacity:.55;
     border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;animation:morph 14s ease-in-out infinite}
   .act .act-cover .n{position:absolute;left:22px;bottom:4px;margin:0;font-size:84px;line-height:1;color:var(--surface);opacity:.9;
@@ -502,6 +502,33 @@
   .src-cap.tbl{text-align:right;max-width:none;margin:6px 4px 0}
   .act-art .src-cap.art{position:absolute;left:0;right:0;bottom:-6px;margin:auto;font-size:10.5px;max-width:210px}
   .hc .src-cap{font-size:11px;max-width:220px}
+
+  /* Menú de actividades: camino */
+  .acts{display:flex !important;flex-direction:column;gap:0 !important;max-width:900px;margin:0 auto}
+  .act{flex-direction:row !important;min-height:240px}
+  .act:nth-of-type(even){flex-direction:row-reverse !important}
+  .act .act-cover{flex:0 0 44%;height:auto;min-height:240px}
+  .act-body-c{justify-content:center;padding:28px 34px !important}
+  .act-body-c h3{font-size:28px}
+  .kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cvc);margin-bottom:8px}
+  .kick .kn{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--cvc);color:var(--surface);font-size:12px;letter-spacing:0}
+  .act .act-cover .n{font-size:110px;bottom:-6px}
+  .act:nth-of-type(even) .act-cover .n{left:auto;right:22px}
+  .act .cv-art{width:210px;margin:-70px 0 0 -60px;z-index:1}
+  .act-gap{position:relative;display:block;height:70px}
+  .act-gap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .act-gap path{fill:none;stroke:var(--clay);stroke-width:2.2;stroke-dasharray:4 8;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.7}
+  .act-gap .gd{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+    background:var(--surface);color:var(--clay);box-shadow:var(--shadow);font-size:15px;animation:bob 5s ease-in-out infinite}
+  @media (max-width:760px){
+    .act,.act:nth-of-type(even){flex-direction:column !important}
+    .act .act-cover{flex:none;min-height:170px}
+    .act:nth-of-type(even) .act-cover .n{left:22px;right:auto}
+    .act .act-cover .n{font-size:72px}
+    .act-gap{height:50px}
+    .act .cv-art{width:200px;margin:-62px 0 0 -70px}
+    .act-gap svg path{d:path("M50 0 L50 70")}
+  }
   .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
   .back:hover{color:var(--accent)}
   .act-page{max-width:800px}
@@ -789,7 +816,8 @@
         <button class="card act" type="button">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">01</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h4M7 14h6"/><rect x="14" y="9" width="3.5" height="4.5" rx=".6"/><circle cx="12" cy="4.5" r="1.3"/></svg></span><span class="cv-art"><svg class="pboard" viewBox="0 0 240 170" aria-hidden="true"> <rect x="4" y="6" width="232" height="158" rx="14" fill="#fffdf9" stroke="#e9e1d6" stroke-width="2"/> <rect x="4" y="6" width="232" height="26" rx="14" fill="#3d6b5c"/><rect x="4" y="20" width="232" height="12" fill="#3d6b5c"/> <circle cx="18" cy="19" r="4" fill="#f6e3b4"/><rect x="28" y="15" width="70" height="8" rx="4" fill="#e4eee8"/> <rect x="196" y="13" width="30" height="12" rx="6" fill="#c26e4c"/> <g font-family="Inter,Arial,sans-serif" font-size="8" font-weight="700" fill="#6f655d"> <text x="16" y="47">1 · Génesis</text><text x="91" y="47">2 · Técnicas</text><text x="166" y="47">3 · Realidad</text> </g> <g class="pn n1"><rect x="14" y="54" width="64" height="42" rx="7" fill="#f6e6dc"/><rect x="20" y="61" width="40" height="5" rx="2.5" fill="#c26e4c"/><rect x="20" y="71" width="50" height="4" rx="2" fill="#e0c2b0"/><rect x="20" y="79" width="42" height="4" rx="2" fill="#e0c2b0"/></g> <g class="pn n2"><rect x="14" y="102" width="64" height="52" rx="7" fill="#e4eee8"/><rect x="20" y="108" width="52" height="24" rx="4" fill="#9cc0b1"/><circle cx="34" cy="120" r="5" fill="#fffdf9"/><path d="M42 131l10-10 14 11z" fill="#3d6b5c"/><rect x="20" y="138" width="40" height="4" rx="2" fill="#b9d0c6"/></g> <g class="pn n3"><rect x="88" y="54" width="64" height="58" rx="7" fill="#fff1a8"/><rect x="94" y="61" width="36" height="5" rx="2.5" fill="#8a6a1f"/><rect x="94" y="71" width="52" height="4" rx="2" fill="#e8d78a"/><rect x="94" y="79" width="48" height="4" rx="2" fill="#e8d78a"/><rect x="94" y="87" width="40" height="4" rx="2" fill="#e8d78a"/><circle cx="140" cy="102" r="5" fill="#c26e4c"/></g> <g class="pn n4"><rect x="88" y="118" width="64" height="36" rx="7" fill="#f6e6dc"/><rect x="94" y="125" width="46" height="5" rx="2.5" fill="#c26e4c"/><rect x="94" y="135" width="52" height="4" rx="2" fill="#e0c2b0"/></g> <g class="pn n5"><rect x="162" y="54" width="64" height="44" rx="7" fill="#e4eee8"/><rect x="168" y="61" width="44" height="5" rx="2.5" fill="#3d6b5c"/><rect x="168" y="71" width="52" height="4" rx="2" fill="#b9d0c6"/><rect x="168" y="79" width="36" height="4" rx="2" fill="#b9d0c6"/><path d="M168 89h10l-3-3m3 3l-3 3" stroke="#3d6b5c" stroke-width="1.6" fill="none" stroke-linecap="round"/></g> <g class="pn n6"><rect x="162" y="104" width="64" height="50" rx="7" fill="#fff1a8"/><rect x="168" y="111" width="40" height="5" rx="2.5" fill="#8a6a1f"/><rect x="168" y="121" width="50" height="4" rx="2" fill="#e8d78a"/><rect x="168" y="129" width="44" height="4" rx="2" fill="#e8d78a"/><path d="M176 145c2-4 7-4 7 0 0-4 5-4 7 0-2 4-7 6-7 6s-5-2-7-6z" fill="#c26e4c"/></g> <g class="cursor"><path d="M0 0l0 14 4-4 3 7 3-1-3-7 6 0z" fill="#2b2522" stroke="#fff" stroke-width="1.2"/></g> </svg> </span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
-          <h3><span lang="es">Padlet: Psicología en 2º de Bachillerato</span><span lang="eu">Padlet: Psikologia Batxilergoko 2. mailan</span></h3>
+          <span class="kick"><span class="kn">1</span><span lang="es">Aprendizaje colaborativo</span><span lang="eu">Lankidetzazko ikaskuntza</span></span>
+          <h3>Padlet</h3>
           <p><span lang="es">Muro colaborativo para trabajar los orígenes, los métodos y los campos de la psicología.</span><span lang="eu">Psikologiaren jatorria, metodoak eta eremuak lantzeko horma kolaboratiboa.</span></p>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           </span>
@@ -813,9 +841,11 @@
           </span>
         </button>
 
+        <span class="act-gap lr" aria-hidden="true"><svg viewBox="0 0 100 70" preserveAspectRatio="none"><path d="M22 0 C 22 40, 78 30, 78 70"/></svg><span class="gd">✦</span></span>
         <button class="card act" type="button">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">02</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20.5h6M10 17h4"/></svg></span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
+          <span class="kick"><span class="kn">2</span><span lang="es">Juego y motivación</span><span lang="eu">Jokoa eta motibazioa</span></span>
           <h3><span lang="es">Gamificación y aplicación en el aula</span><span lang="eu">Gamifikazioa eta ikasgelan aplikatzea</span></h3>
           <p><span lang="es">Logros, feedback y recompensas como elementos de juego para motivar al alumnado.</span><span lang="eu">Lorpenak, feedbacka eta sariak, ikasleak motibatzeko joko-elementu gisa.</span></p>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
@@ -860,9 +890,11 @@
           </span>
         </button>
 
+        <span class="act-gap rl" aria-hidden="true"><svg viewBox="0 0 100 70" preserveAspectRatio="none"><path d="M78 0 C 78 40, 22 30, 22 70"/></svg><span class="gd">✈</span></span>
         <button class="card act" type="button">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">03</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="13" height="10" rx="1.5"/><path d="M1 18h15"/><rect x="17" y="8" width="6" height="11" rx="1.2"/><path d="M19.5 17h1"/></svg></span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
+          <span class="kick"><span class="kn">3</span><span lang="es">Dispositivos propios</span><span lang="eu">Gailu propioak</span></span>
           <h3><span lang="es">Modelos BYOD: trae tu propio dispositivo</span><span lang="eu">BYOD ereduak: ekarri zure gailua</span></h3>
           <p><span lang="es">El alumnado aprende con sus propios dispositivos en el aula.</span><span lang="eu">Ikasleek beren gailuekin ikasten dute ikasgelan.</span></p>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
@@ -877,9 +909,11 @@
           </span>
         </button>
 
+        <span class="act-gap lr" aria-hidden="true"><svg viewBox="0 0 100 70" preserveAspectRatio="none"><path d="M22 0 C 22 40, 78 30, 78 70"/></svg><span class="gd">♥</span></span>
         <button class="card act" type="button">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">04</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/><path d="M10.5 9.5v5l4-2.5z"/></svg></span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
+          <span class="kick"><span class="kn">4</span><span lang="es">Clase invertida</span><span lang="eu">Alderantzizko ikasgela</span></span>
           <h3><span lang="es">Flipped Classroom: la clase invertida</span><span lang="eu">Flipped Classroom: alderantzizko ikasgela</span></h3>
           <p><span lang="es">La teoría se trabaja en casa y el aula se convierte en un espacio activo.</span><span lang="eu">Teoria etxean lantzen da, eta ikasgela gune aktibo bihurtzen da.</span></p>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
