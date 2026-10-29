@@ -189,6 +189,18 @@
   .studies strong{display:block;font-weight:600;line-height:1.35;font-size:15.5px}
   .studies small{display:block;color:var(--accent);font-weight:600;font-size:13px;margin-top:3px}
   .extra{margin-top:44px}
+  .form-grid{align-items:start}
+  .subl{margin:4px 0 12px;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--accent)}
+  .subl ~ .subl{margin-top:22px;padding-top:16px;border-top:1px dashed var(--line)}
+  .mini{margin:0 0 12px;color:var(--muted);font-size:14.5px}
+  .lang-level{display:flex;align-items:center;gap:14px}
+  .lang-level b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:16px;padding:10px 16px}
+  .lang-level>span{font-weight:600;font-size:18px}
+  .robin{width:64px;height:58px;margin-left:auto;overflow:visible}
+  .robin-body{animation:hop 4s ease-in-out infinite;transform-origin:40px 68px}
+  .robin-head{animation:tilt 4s ease-in-out infinite;transform-box:fill-box;transform-origin:30% 80%}
+  @keyframes hop{0%,60%,100%{transform:translateY(0)}68%{transform:translateY(-7px)}76%{transform:translateY(0)}82%{transform:translateY(-3px)}88%{transform:translateY(0)}}
+  @keyframes tilt{0%,30%,100%{transform:rotate(0)}38%,52%{transform:rotate(-12deg)}}
   .book-card{display:flex;gap:40px;align-items:center;padding:34px 40px}
   .book-card p{margin:0;color:var(--muted)}
   .book-title{font-size:28px;margin:2px 0 10px}
@@ -489,8 +501,8 @@
                 <span lang="eu">Irune Muxika naiz, pedagogoa. Pedagogia Gradua ikasi nuen Euskal Herriko Unibertsitatean (EHU) 2017tik 2021era, eta ondoren orientazio soziolaboralean espezializatu nintzen AOSLA-GIZALAN elkartearekin. Gaur egun Bigarren Hezkuntzako Irakasleen Prestakuntzako Masterra egiten ari naiz Camilo José Cela Unibertsitatean (UCJC).</span>
               </p>
               <p>
-                <span lang="es">Mi trayectoria laboral se ha desarrollado en los ámbitos educativo, social y cultural, y la he completado con formación en igualdad, mediación, atención a las altas capacidades y comunicación. Esta experiencia y formación respaldan los conocimientos que ahora quiero poner en práctica en el aula a través de la tecnología, buscando experiencias de aprendizaje más participativas, inclusivas y motivadoras.</span>
-                <span lang="eu">Nire lan-ibilbidea hezkuntza, gizarte eta kultura arloetan garatu da, eta berdintasunean, bitartekaritzan, gaitasun handien arretan eta komunikazioan jasotako prestakuntzarekin osatu dut. Esperientzia eta prestakuntza horiek babesten dituzte orain ikasgelan teknologiaren bidez praktikan jarri nahi ditudan ezagutzak, ikaskuntza-esperientzia parte-hartzaileagoak, inklusiboagoak eta motibagarriagoak bilatuz.</span>
+                <span lang="es">Mi trayectoria laboral se ha desarrollado en los ámbitos educativo, social y cultural, y la he completado con formación en igualdad, mediación, inteligencia emocional y competencias docentes. Esta experiencia y formación respaldan los conocimientos que ahora quiero poner en práctica en el aula a través de la tecnología, buscando experiencias de aprendizaje más participativas, inclusivas y motivadoras.</span>
+                <span lang="eu">Nire lan-ibilbidea hezkuntza, gizarte eta kultura arloetan garatu da, eta berdintasunean, bitartekaritzan, adimen emozionalean eta irakasle-gaitasunetan jasotako prestakuntzarekin osatu dut. Esperientzia eta prestakuntza horiek babesten dituzte orain ikasgelan teknologiaren bidez praktikan jarri nahi ditudan ezagutzak, ikaskuntza-esperientzia parte-hartzaileagoak, inklusiboagoak eta motibagarriagoak bilatuz.</span>
               </p>
               <div class="pro-links">
                 <a href="cv.pdf" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span lang="es">Ver mi CV</span><span lang="eu">Nire CVa ikusi</span></a>
@@ -503,8 +515,8 @@
             <ul class="principles">
               <li><strong><span lang="es">Máster en Formación del Profesorado de ESO y Bachillerato, FP y Enseñanza de Idiomas</span><span lang="eu">DBHko eta Batxilergoko, Lanbide Heziketako eta Hizkuntzen Irakaskuntzako Irakasleen Prestakuntza Unibertsitate Masterra</span></strong>
                 <small><span lang="es">Universidad Camilo José Cela</span><span lang="eu">Camilo José Cela Unibertsitatea</span> · 2026 – 2027</small></li>
-              <li><strong><span lang="es">Orientación sociolaboral</span><span lang="eu">Orientazio soziolaboraleko lanbide-ikastaroa</span></strong>
-                <small>AOSLA - GIZALAN · 2025 – 2026</small></li>
+              <li><strong><span lang="es">Curso profesional de orientación sociolaboral: capacitación en orientación e inserción para el empleo</span><span lang="eu">Orientazio soziolaboraleko lanbide-ikastaroa: enplegurako orientazioan eta laneratzean gaitzea</span></strong>
+                <small>AOSLA-GIZALAN · 2025 – 2026 · 175 h</small></li>
               <li><strong><span lang="es">Grado en Pedagogía</span><span lang="eu">Pedagogia Gradua</span></strong>
                 <small><span lang="es">Universidad del País Vasco (EHU)</span><span lang="eu">Euskal Herriko Unibertsitatea (EHU)</span> · 2017 – 2021</small></li>
             </ul>
@@ -547,41 +559,65 @@
         </div>
       </div>
 
-      <!-- Formación complementaria y competencias -->
+      <!-- Más formación -->
       <div class="panel extra">
-        <h3 class="sec-h"><span lang="es">Formación complementaria y competencias</span><span lang="eu">Prestakuntza osagarria eta gaitasunak</span></h3>
-          <div class="grid-2">
-            <div class="card">
-              <p class="label"><span lang="es">Formación complementaria</span><span lang="eu">Prestakuntza osagarria</span></p>
-              <ul class="principles">
-                <li><span lang="es">Máster en Protocolo, Marketing y Comunicación (400 h)</span><span lang="eu">Protokoloa, Marketina eta Komunikazio Masterra (400 h)</span></li>
-                <li><span lang="es">Cursos de igualdad de género (+200 h)</span><span lang="eu">Genero berdintasun kurtsoak (+200 h)</span></li>
-                <li><span lang="es">Atención al alumnado con altas capacidades (50 h)</span><span lang="eu">Gaitasun handiak dituzten ikasleentzako arreta (50 h)</span></li>
-                <li><span lang="es">Mediación y resolución de conflictos (35 h)</span><span lang="eu">Bitartekaritza eta gatazkak konpontzea (35 h)</span></li>
-                <li><span lang="es">Título de monitora y coordinadora de tiempo libre</span><span lang="eu">Aisialdiko begirale eta koordinatzaile titulua</span></li>
-              </ul>
-            </div>
-            <div class="card">
-              <p class="label"><span lang="es">Competencias</span><span lang="eu">Gaitasunak</span></p>
-              <div class="chips">
-                <span class="chip"><span lang="es">Orientación sociolaboral</span><span lang="eu">Orientazio soziolaborala</span></span>
-                <span class="chip"><span lang="es">Intervención socioeducativa</span><span lang="eu">Esku-hartze sozioedukatiboa</span></span>
-                <span class="chip"><span lang="es">Gestión cultural y de tiempo libre</span><span lang="eu">Kultura eta aisialdi kudeaketa</span></span>
-                <span class="chip"><span lang="es">Igualdad de género</span><span lang="eu">Genero berdintasuna</span></span>
-                <span class="chip"><span lang="es">Mediación</span><span lang="eu">Bitartekaritza</span></span>
-                <span class="chip"><span lang="es">Trabajo en equipo</span><span lang="eu">Talde-lana</span></span>
-              </div>
-              <p class="label" style="margin-top:24px"><span lang="es">Idiomas</span><span lang="eu">Hizkuntzak</span></p>
-              <div class="chips">
-                <span class="chip"><span lang="es">Euskera C1</span><span lang="eu">Euskara C1</span></span>
-                <span class="chip"><span lang="es">Castellano</span><span lang="eu">Gaztelania</span></span>
-              </div>
-              <p class="label" style="margin-top:24px">IT Txartelak</p>
-              <div class="chips">
-                <span class="chip">Word</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Outlook</span><span class="chip">Internet</span>
-              </div>
+        <h3 class="sec-h"><span lang="es">Más formación</span><span lang="eu">Prestakuntza gehiago</span></h3>
+        <div class="grid-2 form-grid">
+          <div class="card studies">
+            <p class="label"><span lang="es">Formación en igualdad</span><span lang="eu">Berdintasuneko prestakuntza</span></p>
+            <ul class="principles">
+              <li><strong><span lang="es">Hombres, masculinidades e igualdad</span><span lang="eu">Gizonak, maskulinitateak eta berdintasuna</span></strong><small>Emakunde · 10 h</small></li>
+              <li><strong>Hezkidetzaren alde busti!</strong><small>EHU · 75 h</small></li>
+              <li><strong><span lang="es">Diseño de planes de igualdad</span><span lang="eu">Berdintasun-planen diseinua</span></strong><small>Martivans Consultores · 30 h</small></li>
+              <li><strong><span lang="es">Uso del lenguaje de género</span><span lang="eu">Genero-ikuspegiko hizkeraren erabilera</span></strong><small>Martivans Consultores · 40 h</small></li>
+              <li><strong><span lang="es">Igualdad de género</span><span lang="eu">Genero-berdintasuna</span></strong><small><span lang="es">Fundación Juan de los Toyos</span><span lang="eu">Juan de los Toyos Fundazioa</span> · 50 h</small></li>
+            </ul>
+          </div>
+          <div class="card studies">
+            <p class="label"><span lang="es">Formación complementaria</span><span lang="eu">Prestakuntza osagarria</span></p>
+            <p class="subl"><span lang="es">Educación</span><span lang="eu">Hezkuntza</span></p>
+            <ul class="principles">
+              <li><strong><span lang="es">Competencias docentes para la educación contemporánea</span><span lang="eu">Gaur egungo hezkuntzarako irakasle-gaitasunak</span></strong><small>MCA Business &amp; Postgraduate School · 48 h</small></li>
+              <li><strong><span lang="es">Nuevos modelos formativos para desarrollar la inteligencia emocional en el aula</span><span lang="eu">Ikasgelan adimen emozionala garatzeko prestakuntza-eredu berriak</span></strong><small><span lang="es">Universidad de Extremadura</span><span lang="eu">Extremadurako Unibertsitatea</span> · 24 h</small></li>
+              <li><strong><span lang="es">Tendencias en investigación educativa y social</span><span lang="eu">Hezkuntza- eta gizarte-ikerketako joerak</span></strong><small><span lang="es">Universidad de La Laguna</span><span lang="eu">La Lagunako Unibertsitatea</span> · 25 h</small></li>
+            </ul>
+            <p class="subl"><span lang="es">Otros ámbitos</span><span lang="eu">Beste arlo batzuk</span></p>
+            <ul class="principles">
+              <li><strong><span lang="es">Triple máster propio en protocolo, marketing y comunicación</span><span lang="eu">Protokolo, marketin eta komunikazioko berezko master hirukoitza</span></strong><small>UNIDEMA · 400 h</small></li>
+              <li><strong><span lang="es">Mediación y resolución de conflictos</span><span lang="eu">Bitartekaritza eta gatazken ebazpena</span></strong><small>IFE · 35 h</small></li>
+              <li><strong><span lang="es">Mobbing o acoso laboral</span><span lang="eu">Mobbinga edo laneko jazarpena</span></strong><small>ASLE · 30 h</small></li>
+              <li><strong><span lang="es">Redacción y presentación de informes</span><span lang="eu">Txostenak idaztea eta aurkeztea</span></strong><small>Instituto Europa · 60 h</small></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p class="label"><span lang="es">Formación en TIC</span><span lang="eu">IKT prestakuntza</span></p>
+            <p class="mini"><span lang="es">Certificados IT Txartela:</span><span lang="eu">IT Txartela ziurtagiriak:</span></p>
+            <div class="chips">
+              <span class="chip">Word</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Outlook</span><span class="chip">Internet</span>
             </div>
           </div>
+          <div class="card">
+            <p class="label"><span lang="es">Idiomas</span><span lang="eu">Hizkuntzak</span></p>
+            <div class="lang-level"><b>C1</b><span><span lang="es">Euskera</span><span lang="eu">Euskara</span></span>
+            <svg class="robin" viewBox="0 0 80 72" role="img" aria-label="Txantxangorria">
+              <g class="robin-body">
+                <path d="M16 42 L2 35 L6 49 Z" fill="#7a5c45"/>
+                <ellipse cx="38" cy="42" rx="24" ry="19" fill="#8a6a50"/>
+                <ellipse cx="49" cy="44" rx="15" ry="14" style="fill:var(--clay)"/>
+                <ellipse cx="40" cy="54" rx="14" ry="6.5" fill="#f3e7d8"/>
+                <path d="M22 38 C 29 31, 43 34, 41 47 C 35 51, 26 47, 22 38 Z" fill="#6f533f"/>
+                <line x1="35" y1="59" x2="33" y2="68" stroke="#3a2f28" stroke-width="2" stroke-linecap="round"/>
+                <line x1="44" y1="59" x2="45" y2="68" stroke="#3a2f28" stroke-width="2" stroke-linecap="round"/>
+                <g class="robin-head">
+                  <circle cx="54" cy="27" r="13" fill="#8a6a50"/>
+                  <circle cx="58" cy="31" r="9" style="fill:var(--clay)"/>
+                  <circle cx="59" cy="24" r="2.3" fill="#2b2522"/><circle cx="59.8" cy="23.2" r=".7" fill="#fff"/>
+                  <path d="M66 27 L75 29.5 L66 32 Z" fill="#3a2f28"/>
+                </g>
+              </g>
+            </svg></div>
+          </div>
+        </div>
       </div>
     </section>
     </div>
