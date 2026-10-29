@@ -247,6 +247,9 @@
   .portrait:hover .me-wrap img{transform:scale(1.06)}
   .hero-side{align-self:start}
   @media (max-width:760px){.pres-head{grid-template-columns:1fr}.pres-head .portrait{order:-1;width:190px;margin:10px auto 26px}}
+  .robin-note{width:auto;max-width:300px;margin:36px 0 0 auto;transform:rotate(2deg);animation:sway 7s ease-in-out infinite}
+  .robin-arrow{position:absolute;right:6px;top:-42px;width:60px;height:50px;overflow:visible;pointer-events:none}
+  .robin-arrow path{fill:none;stroke:var(--clay);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
   @keyframes sway{0%,100%{transform:rotate(3deg)}50%{transform:rotate(1.5deg) translateY(-3px)}}
   @media (max-width:760px){.hero-side{display:contents}.postit{order:2;margin:10px auto 0;width:min(320px,100%);align-self:auto}.postit-arrow{display:none}}
   @media (max-width:980px){.intro-grid{grid-template-columns:1fr}}
@@ -623,6 +626,11 @@
                 </g>
               </g>
             </svg></div>
+            <aside class="postit robin-note" role="note">
+              <svg class="robin-arrow" viewBox="0 0 60 50" aria-hidden="true"><path class="pa-line" d="M40 2 C 52 16, 46 32, 30 44"/><path class="pa-head" d="M27 34 L29 45 L39 42"/></svg>
+              <p class="postit-t"><span lang="es">¡Curiosidad!</span><span lang="eu">Bitxikeria!</span></p>
+              <p><span lang="es">El petirrojo (<em>txantxangorri</em> en euskera) fue elegido como imagen unificada para promover el uso del euskera de forma amable, cercana y cotidiana en la calle, el comercio y las instituciones: «Eman hegoak euskarari» (Dale alas al euskera).</span><span lang="eu">Txantxangorria irudi bateratu gisa aukeratu zen euskararen erabilera modu atsegin, hurbil eta egunerokoan sustatzeko kalean, merkataritzan eta erakundeetan: «Eman hegoak euskarari».</span></p>
+            </aside>
           </div>
         </div>
       </div>
@@ -852,8 +860,13 @@
             </tr>
             <tr>
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
-              <td><span lang="es">Redactar y pulir textos a partir de mis indicaciones, y traducirlos al euskera.</span><span lang="eu">Nire jarraibideetatik abiatuta testuak idatzi eta txukundu, eta euskarara itzuli.</span></td>
+              <td><span lang="es">Redactar y pulir textos a partir de mis indicaciones.</span><span lang="eu">Nire jarraibideetatik abiatuta testuak idatzi eta txukundu.</span></td>
               <td><span lang="es">Presentación y actividades</span><span lang="eu">Aurkezpena eta jarduerak</span></td>
+            </tr>
+            <tr>
+              <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
+              <td><span lang="es">Traducir automáticamente al euskera todos los textos de la web para ofrecer la versión bilingüe.</span><span lang="eu">Webguneko testu guztiak euskarara automatikoki itzuli, bertsio elebiduna eskaintzeko.</span></td>
+              <td><span lang="es">Versión en euskera</span><span lang="eu">Euskarazko bertsioa</span></td>
             </tr>
             <tr>
               <td><strong>Gemini</strong><br><small class="t-org">Google</small></td>
