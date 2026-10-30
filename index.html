@@ -543,6 +543,8 @@
 
   .reqs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
   .req{display:flex;align-items:flex-start;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-size:14.5px;line-height:1.45;color:var(--text)}
+  .req:last-child:nth-child(odd){grid-column:1 / -1}
+  .delivs .deliv:only-child{max-width:260px}
   .rq-n{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--surface);font-family:var(--serif);font-weight:600;font-size:13px}
   .delivs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:4px}
   .deliv{display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:16px;background:var(--surface);border:1.5px solid var(--accent);text-decoration:none;color:var(--text);transition:.25s}
@@ -974,16 +976,29 @@
           <span class="act-body-c">
           <span class="kick"><span class="kn">4</span><span lang="es">Clase invertida</span><span lang="eu">Alderantzizko ikasgela</span></span>
           <h3><span lang="es">Flipped Classroom: la clase invertida</span><span lang="eu">Flipped Classroom: alderantzizko ikasgela</span></h3>
-          <p><span lang="es">La teoría se trabaja en casa y el aula se convierte en un espacio activo.</span><span lang="eu">Teoria etxean lantzen da, eta ikasgela gune aktibo bihurtzen da.</span></p>
+          <p><span lang="es">Un vídeo propio, grabado con Microsoft Stream y ScreenPal, para trabajar la teoría en casa y aprovechar el aula para la práctica.</span><span lang="eu">Microsoft Stream eta ScreenPal-ekin grabatutako bideo propioa, teoria etxean lantzeko eta ikasgela praktikarako aprobetxatzeko.</span></p>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           </span>
           <span class="detail">
-            <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>Flipped Classroom</b></span><span class="fi-i"><small><span lang="es">En casa</span><span lang="eu">Etxean</span></small><b><span lang="es">Teoría: vídeos y lecturas</span><span lang="eu">Teoria: bideoak eta irakurgaiak</span></b></span><span class="fi-i"><small><span lang="es">En el aula</span><span lang="eu">Ikasgelan</span></small><b><span lang="es">Práctica y cooperación</span><span lang="eu">Praktika eta lankidetza</span></b></span></span>
+            <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>Flipped Classroom</b></span><span class="fi-i"><small><span lang="es">Herramientas</span><span lang="eu">Tresnak</span></small><b>Microsoft Stream · ScreenPal</b></span><span class="fi-i"><small><span lang="es">Producto</span><span lang="eu">Produktua</span></small><b><span lang="es">Vídeo con mi cara y apoyo visual</span><span lang="eu">Nire aurpegia eta laguntza bisuala dituen bideoa</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Aprendizaje activo</span><span lang="eu">Ikaskuntza aktiboa</span></b></span></span>
+            <h4><span lang="es">Introducción</span><span lang="eu">Sarrera</span></h4>
+            <p><span lang="es">El propósito de esta práctica es <strong>descubrir el potencial de la flipped classroom</strong>: preparar contenidos en vídeo para que el alumnado los trabaje antes de clase y aprovechar el tiempo en el aula para practicar, resolver dudas y cooperar.</span><span lang="eu">Praktika honen helburua <strong>flipped classroom ereduaren ahalmena ezagutzea</strong> da: bideo-edukiak prestatzea, ikasleek eskola aurretik lan ditzaten, eta ikasgelako denbora praktikatzeko, zalantzak argitzeko eta lankidetzan aritzeko aprobetxatzea.</span></p>
             <h4><span lang="es">¿Qué es la Flipped Classroom?</span><span lang="eu">Zer da Flipped Classroom delakoa?</span></h4>
             <p><span lang="es">En el modelo de clase invertida (<em>Flipped Classroom</em>), el alumnado trabaja los contenidos teóricos fuera del aula —por ejemplo, mediante vídeos o lecturas— y el tiempo de clase se dedica a actividades prácticas, resolución de dudas, trabajo cooperativo y aplicación de lo aprendido. El docente pasa a ser guía y acompañante del proceso de aprendizaje (Bergmann y Sams, 2012).</span><span lang="eu">Alderantzizko ikasgela ereduan (<em>Flipped Classroom</em>), ikasleek eduki teorikoak ikasgelatik kanpo lantzen dituzte —adibidez, bideoen edo irakurgaien bidez—, eta eskola-denbora jarduera praktikoetarako, zalantzak argitzeko, lankidetzan aritzeko eta ikasitakoa aplikatzeko erabiltzen da. Irakaslea ikaskuntza-prozesuaren gida eta laguntzaile bihurtzen da (Bergmann eta Sams, 2012).</span></p>
+            <h4><span lang="es">La práctica</span><span lang="eu">Praktika</span></h4>
+            <p><span lang="es">Para grabar el vídeo utilizamos dos herramientas: <a href="https://www.microsoft.com/es-es/microsoft-365/microsoft-stream" target="_blank" rel="noopener">Microsoft Stream</a> y <a href="https://screenpal.com/" target="_blank" rel="noopener">ScreenPal</a>, que permiten capturar el escritorio en vídeo y grabarnos con la cámara al mismo tiempo.</span><span lang="eu">Bideoa grabatzeko bi tresna erabiltzen ditugu: <a href="https://www.microsoft.com/es-es/microsoft-365/microsoft-stream" target="_blank" rel="noopener">Microsoft Stream</a> eta <a href="https://screenpal.com/" target="_blank" rel="noopener">ScreenPal</a>; mahaigaina bideoan grabatzeko eta, aldi berean, kamerarekin geure burua grabatzeko aukera ematen dute.</span></p>
+            <!-- CAMBIAR: añadir aquí el tema del vídeo cuando lo tengas -->
+            <h4><span lang="es">¿Qué se pide?</span><span lang="eu">Zer eskatzen da?</span></h4>
+            <span class="reqs"><span class="req"><span class="rq-n">1</span><span lang="es">Crear un vídeo adecuado como recurso para una flipped classroom.</span><span lang="eu">Flipped classroom baterako baliabide egokia izango den bideo bat sortzea.</span></span><span class="req"><span class="rq-n">2</span><span lang="es">Aparecer en el vídeo: no hace falta todo el tiempo, pero debe verse la cara.</span><span lang="eu">Bideoan agertzea: ez da beharrezkoa denbora guztian, baina aurpegia ikusi behar da.</span></span><span class="req"><span class="rq-n">3</span><span lang="es">Utilizar apoyo visual: capturar la pantalla con un PowerPoint, un vídeo o un documento sobre el que ir escribiendo.</span><span lang="eu">Laguntza bisuala erabiltzea: pantaila grabatzea PowerPoint, bideo edo gainean idazten joateko dokumentu batekin.</span></span></span>
+            <h4><span lang="es">Entregables</span><span lang="eu">Entregagarriak</span></h4>
+            <span class="delivs">
+              <!-- CAMBIAR: sustituye href="#" por el enlace del vídeo y quita la clase "pending" -->
+              <a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">🎬</span><span class="dv-t"><span lang="es">Vídeo para la flipped classroom</span><span lang="eu">Flipped classroom-erako bideoa</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a>
+            </span>
             <h4><span lang="es">Bibliografía</span><span lang="eu">Bibliografia</span></h4>
             <p class="ref">Bergmann, J. y Sams, A. (2012). <em>Flip your classroom: Reach every student in every class every day</em>. International Society for Technology in Education.</p>
-            <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
+            <p class="ref">Microsoft. (s. f.). <em>Microsoft Stream</em> [Aplicación web]. <a href="https://www.microsoft.com/es-es/microsoft-365/microsoft-stream" target="_blank" rel="noopener">https://www.microsoft.com/es-es/microsoft-365/microsoft-stream</a></p>
+            <p class="ref">ScreenPal. (s. f.). <em>ScreenPal</em> [Aplicación web]. <a href="https://screenpal.com/" target="_blank" rel="noopener">https://screenpal.com/</a></p>
           </span>
         </div>
       </div>
