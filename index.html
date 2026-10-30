@@ -310,7 +310,7 @@
   /* ---------- Actividades ---------- */
   .acts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   @media (max-width:640px){.acts{grid-template-columns:1fr}}
-  .act{display:flex;flex-direction:column;cursor:pointer;transition:.25s;text-align:left;font:inherit;color:inherit;width:100%}
+  .act{display:flex;flex-direction:column;cursor:pointer;text-decoration:none;transition:.25s;text-align:left;font:inherit;color:inherit;width:100%}
   .act:hover{transform:translateY(-4px);border-color:var(--accent)}
   .act .n{font-family:var(--serif);font-size:44px;line-height:1;color:var(--clay);opacity:.85;margin-bottom:14px}
   .act h3{font-size:23px;margin:0 0 6px}
@@ -515,6 +515,14 @@
   .act .act-cover .n{font-size:110px;bottom:-6px}
   .act:nth-of-type(even) .act-cover .n{left:auto;right:22px}
   .act .cv-art{width:210px;margin:-70px 0 0 -60px;z-index:1}
+  .act .act-cover{display:block;position:relative}
+  .act .cv-art{top:50%;left:58%;width:min(210px,62%);margin:0;transform:translate(-50%,-50%) rotate(-3deg)}
+  .act:hover .cv-art{transform:translate(-50%,-50%) rotate(0) scale(1.04)}
+  .act .cv-card{top:50%;left:50%;width:min(96px,28%);margin:0}
+  .act .cv-card.c0{transform:translate(-92%,-50%) rotate(-9deg)}
+  .act .cv-card.c1{transform:translate(-8%,-52%) rotate(8deg)}
+  .act:hover .cv-card.c0{transform:translate(-100%,-50%) rotate(-14deg)}
+  .act:hover .cv-card.c1{transform:translate(0,-52%) rotate(13deg)}
   .act-gap{position:relative;display:block;height:70px}
   .act-gap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .act-gap path{fill:none;stroke:var(--clay);stroke-width:2.2;stroke-dasharray:4 8;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.7}
@@ -526,8 +534,11 @@
     .act:nth-of-type(even) .act-cover .n{left:22px;right:auto}
     .act .act-cover .n{font-size:72px}
     .act-gap{height:50px}
-    .act .cv-art{width:200px;margin:-62px 0 0 -70px}
-    .act-gap svg path{d:path("M50 0 L50 70")}
+    .act .act-cover{min-height:200px;height:200px}
+    .act .cv-art{width:min(230px,66%);left:58%}
+    .act .cv-card{width:86px;left:58%}
+    .act-gap svg{display:none}
+    .act-gap::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2px dashed var(--clay);opacity:.6}
   }
 
   .reqs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
@@ -826,7 +837,7 @@
 
       <div class="acts">
         <!-- CAMBIAR: título, resumen, herramientas y el bloque .detail de cada actividad -->
-        <button class="card act" type="button">
+        <div class="card act" role="link" tabindex="0" data-href="#actividad-1">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">01</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h4M7 14h6"/><rect x="14" y="9" width="3.5" height="4.5" rx=".6"/><circle cx="12" cy="4.5" r="1.3"/></svg></span><span class="cv-art"><svg class="pboard" viewBox="0 0 240 170" aria-hidden="true"> <rect x="4" y="6" width="232" height="158" rx="14" fill="#fffdf9" stroke="#e9e1d6" stroke-width="2"/> <rect x="4" y="6" width="232" height="26" rx="14" fill="#3d6b5c"/><rect x="4" y="20" width="232" height="12" fill="#3d6b5c"/> <circle cx="18" cy="19" r="4" fill="#f6e3b4"/><rect x="28" y="15" width="70" height="8" rx="4" fill="#e4eee8"/> <rect x="196" y="13" width="30" height="12" rx="6" fill="#c26e4c"/> <g font-family="Inter,Arial,sans-serif" font-size="8" font-weight="700" fill="#6f655d"> <text x="16" y="47">1 · Génesis</text><text x="91" y="47">2 · Técnicas</text><text x="166" y="47">3 · Realidad</text> </g> <g class="pn n1"><rect x="14" y="54" width="64" height="42" rx="7" fill="#f6e6dc"/><rect x="20" y="61" width="40" height="5" rx="2.5" fill="#c26e4c"/><rect x="20" y="71" width="50" height="4" rx="2" fill="#e0c2b0"/><rect x="20" y="79" width="42" height="4" rx="2" fill="#e0c2b0"/></g> <g class="pn n2"><rect x="14" y="102" width="64" height="52" rx="7" fill="#e4eee8"/><rect x="20" y="108" width="52" height="24" rx="4" fill="#9cc0b1"/><circle cx="34" cy="120" r="5" fill="#fffdf9"/><path d="M42 131l10-10 14 11z" fill="#3d6b5c"/><rect x="20" y="138" width="40" height="4" rx="2" fill="#b9d0c6"/></g> <g class="pn n3"><rect x="88" y="54" width="64" height="58" rx="7" fill="#fff1a8"/><rect x="94" y="61" width="36" height="5" rx="2.5" fill="#8a6a1f"/><rect x="94" y="71" width="52" height="4" rx="2" fill="#e8d78a"/><rect x="94" y="79" width="48" height="4" rx="2" fill="#e8d78a"/><rect x="94" y="87" width="40" height="4" rx="2" fill="#e8d78a"/><circle cx="140" cy="102" r="5" fill="#c26e4c"/></g> <g class="pn n4"><rect x="88" y="118" width="64" height="36" rx="7" fill="#f6e6dc"/><rect x="94" y="125" width="46" height="5" rx="2.5" fill="#c26e4c"/><rect x="94" y="135" width="52" height="4" rx="2" fill="#e0c2b0"/></g> <g class="pn n5"><rect x="162" y="54" width="64" height="44" rx="7" fill="#e4eee8"/><rect x="168" y="61" width="44" height="5" rx="2.5" fill="#3d6b5c"/><rect x="168" y="71" width="52" height="4" rx="2" fill="#b9d0c6"/><rect x="168" y="79" width="36" height="4" rx="2" fill="#b9d0c6"/><path d="M168 89h10l-3-3m3 3l-3 3" stroke="#3d6b5c" stroke-width="1.6" fill="none" stroke-linecap="round"/></g> <g class="pn n6"><rect x="162" y="104" width="64" height="50" rx="7" fill="#fff1a8"/><rect x="168" y="111" width="40" height="5" rx="2.5" fill="#8a6a1f"/><rect x="168" y="121" width="50" height="4" rx="2" fill="#e8d78a"/><rect x="168" y="129" width="44" height="4" rx="2" fill="#e8d78a"/><path d="M176 145c2-4 7-4 7 0 0-4 5-4 7 0-2 4-7 6-7 6s-5-2-7-6z" fill="#c26e4c"/></g> <g class="cursor"><path d="M0 0l0 14 4-4 3 7 3-1-3-7 6 0z" fill="#2b2522" stroke="#fff" stroke-width="1.2"/></g> </svg> </span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
           <span class="kick"><span class="kn">1</span><span lang="es">Aprendizaje colaborativo</span><span lang="eu">Lankidetzazko ikaskuntza</span></span>
@@ -852,10 +863,10 @@
             <p class="ref">Decreto 76/2023, de 30 de mayo, de establecimiento del currículo de Bachillerato e implantación del mismo en la Comunidad Autónoma de Euskadi. (2023). <em>Boletín Oficial del País Vasco</em>, 109, 9 de junio de 2023. <a href="https://www.euskadi.eus/web01-bopv/es/bopv2/datos/2023/06/2302728a.shtml" target="_blank" rel="noopener">https://www.euskadi.eus/web01-bopv/es/bopv2/datos/2023/06/2302728a.shtml</a></p>
             <p class="ref">Padlet. (s. f.). <em>Padlet</em> [Aplicación web]. <a href="https://padlet.com" target="_blank" rel="noopener">https://padlet.com</a></p>
           </span>
-        </button>
+        </div>
 
         <span class="act-gap lr" aria-hidden="true"><svg viewBox="0 0 100 70" preserveAspectRatio="none"><path d="M22 0 C 22 40, 78 30, 78 70"/></svg><span class="gd">✦</span></span>
-        <button class="card act" type="button">
+        <div class="card act" role="link" tabindex="0" data-href="#actividad-2">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">02</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20.5h6M10 17h4"/></svg></span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
           <span class="kick"><span class="kn">2</span><span lang="es">Juego y motivación</span><span lang="eu">Jokoa eta motibazioa</span></span>
@@ -901,10 +912,10 @@
             <p class="ref">Hearthcards. (s. f.). <em>Hearthstone card maker</em> [Aplicación web]. <a href="https://www.hearthcards.net/" target="_blank" rel="noopener">https://www.hearthcards.net/</a></p>
             <p class="ref">Kapp, K. M. (2012). <em>The gamification of learning and instruction: Game-based methods and strategies for training and education</em>. Pfeiffer.</p>
           </span>
-        </button>
+        </div>
 
         <span class="act-gap rl" aria-hidden="true"><svg viewBox="0 0 100 70" preserveAspectRatio="none"><path d="M78 0 C 78 40, 22 30, 22 70"/></svg><span class="gd">✈</span></span>
-        <button class="card act" type="button">
+        <div class="card act" role="link" tabindex="0" data-href="#actividad-3">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">03</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="13" height="10" rx="1.5"/><path d="M1 18h15"/><rect x="17" y="8" width="6" height="11" rx="1.2"/><path d="M19.5 17h1"/></svg></span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
           <span class="kick"><span class="kn">3</span><span lang="es">Dispositivos propios</span><span lang="eu">Gailu propioak</span></span>
@@ -915,16 +926,16 @@
           <span class="detail">
             <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>BYOD</b></span><span class="fi-i"><small><span lang="es">Herramienta</span><span lang="eu">Tresna</span></small><b>Socrative</b></span><span class="fi-i"><small><span lang="es">Especialidad</span><span lang="eu">Espezialitatea</span></small><b><span lang="es">Orientación educativa</span><span lang="eu">Hezkuntza-orientazioa</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Evaluación formativa en tiempo real</span><span lang="eu">Denbora errealeko ebaluazio formatiboa</span></b></span></span>
             <h4><span lang="es">Introducción</span><span lang="eu">Sarrera</span></h4>
-            <p><span lang="es">En este tema trabajamos el uso de los dispositivos móviles en el aula y sus aplicaciones para la <strong>evaluación formativa en tiempo real</strong>. Para abrir el debate, partimos de esta reflexión:</span><span lang="eu">Gai honetan gailu mugikorrak ikasgelan nola erabili lantzen dugu, baita <strong>denbora errealeko ebaluazio formatiboan</strong> dituzten aplikazioak ere. Eztabaida irekitzeko, gogoeta honetatik abiatzen gara:</span></p>
+            <p><span lang="es">En este tema trabajamos el uso de los dispositivos móviles en el aula y sus aplicaciones para la <strong>evaluación formativa en tiempo real</strong>. Para abrir el debate, partimos de esta reflexión que nos proponen las profesoras de Tecnologías Aplicadas a las Didácticas Específicas, Diana Cembreros y Natalia Lara Nieto:</span><span lang="eu">Gai honetan gailu mugikorrak ikasgelan nola erabili lantzen dugu, baita <strong>denbora errealeko ebaluazio formatiboan</strong> dituzten aplikazioak ere. Eztabaida irekitzeko, Didaktika Espezifikoei Aplikatutako Teknologiak irakasgaiko irakasle Diana Cembrerosek eta Natalia Lara Nietok proposatzen diguten gogoeta honetatik abiatzen gara:</span></p>
             <blockquote class="quote-box">
               <span lang="es">«¿Dejamos de prohibir los móviles en el aula y los convertimos en herramientas de aprendizaje? ¿Por qué no dejamos que los alumnos y alumnas utilicen sus propios dispositivos? En los casos en los que no disponga de ellos, el propio centro puede tener una batería de ellos a disposición de los que lo necesiten, ayudando así a romper la brecha digital por causas económicas. Pues bien, esta puede ser una buena solución, y ya está bautizada, es el modelo BYOD (Bring your Own Device), o sea, 'trae tu propio dispositivo'.»</span><span lang="eu">«Mugikorrak ikasgelan debekatzeari utzi eta ikaskuntza-tresna bihurtzen baditugu? Zergatik ez diegu uzten ikasleei beren gailuak erabiltzen? Gailurik ez duten kasuetan, ikastetxeak berak gailu sorta bat izan dezake behar dutenen eskura, eta horrela arrazoi ekonomikoengatiko arrakala digitala hausten lagundu. Bada, hori irtenbide ona izan daiteke, eta badu izena: BYOD eredua (Bring your Own Device), hau da, 'ekarri zure gailua'.» <em>(Jatorrizkoa gaztelaniaz)</em></span>
-              <cite><span lang="es">Juanmi Muñoz, pedagogo, maestro y responsable TAC (SOCEA, Departament d'Ensenyament); consultor de la Universitat Oberta de Catalunya y expresidente de Espiral.</span><span lang="eu">Juanmi Muñoz, pedagogoa, maisua eta IKT arduraduna (SOCEA, Departament d'Ensenyament); Universitat Oberta de Catalunyako aholkularia eta Espiral elkarteko presidente ohia.</span></cite>
+              <cite><span lang="es">Juanmi Muñoz, pedagogo, maestro y responsable TAC (SOCEA, Departament d'Ensenyament); consultor de la Universitat Oberta de Catalunya y expresidente de Espiral (citado en Cembreros y Lara Nieto, 2026).</span><span lang="eu">Juanmi Muñoz, pedagogoa, maisua eta IKT arduraduna (SOCEA, Departament d'Ensenyament); Universitat Oberta de Catalunyako aholkularia eta Espiral elkarteko presidente ohia (Cembrerosek eta Lara Nietok aipatua, 2026).</span></cite>
             </blockquote>
             <h4><span lang="es">¿Qué es el modelo BYOD?</span><span lang="eu">Zer da BYOD eredua?</span></h4>
             <p><span lang="es">BYOD (<em>Bring Your Own Device</em>, «trae tu propio dispositivo») es un modelo en el que el alumnado utiliza sus propios dispositivos —móviles, tabletas u ordenadores portátiles— como herramienta de aprendizaje en el aula. Favorece la personalización, el acceso a recursos digitales y la continuidad entre el aprendizaje dentro y fuera del aula, aunque exige planificar aspectos como la equidad de acceso, la conectividad, la seguridad y el uso responsable (Song, 2014).</span><span lang="eu">BYOD (<em>Bring Your Own Device</em>, «ekarri zure gailua») ikasleek beren gailuak —mugikorrak, tabletak edo eramangarriak— ikasgelan ikaskuntza-tresna gisa erabiltzen dituzten eredua da. Pertsonalizazioa, baliabide digitaletarako sarbidea eta ikasgela barruko eta kanpoko ikaskuntzaren arteko jarraitutasuna errazten ditu, baina aldez aurretik planifikatu behar dira sarbide-ekitatea, konexioa, segurtasuna eta erabilera arduratsua (Song, 2014).</span></p>
             <p><span lang="es">Una de sus aplicaciones prácticas es utilizar los móviles del alumnado para la evaluación formativa: el docente envía preguntas tipo test o de respuesta corta, el alumnado recibe <strong>feedback inmediato</strong> y el profesorado obtiene las respuestas <strong>en tiempo real</strong>.</span><span lang="eu">Aplikazio praktikoetako bat ikasleen mugikorrak ebaluazio formatiborako erabiltzea da: irakasleak test motako edo erantzun laburreko galderak bidaltzen ditu, ikasleek <strong>berehalako feedbacka</strong> jasotzen dute eta irakasleak erantzunak <strong>denbora errealean</strong> lortzen ditu.</span></p>
             <h4><span lang="es">La práctica</span><span lang="eu">Praktika</span></h4>
-            <p><span lang="es">He elegido un tema adecuado para la práctica profesional de mi especialidad, la <strong>orientación educativa</strong>, y he creado una actividad de evaluación formativa con <a href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>. Es una aplicación gratuita que admite preguntas de distintos tipos (tipo test, encuesta, verdadero/falso, respuesta corta, enunciados con imágenes…), permite trabajar en modo examen, ejercicio individual o juego colaborativo, y ofrece al final un informe global de la clase. Una alternativa similar es <a href="https://kahoot.com/" target="_blank" rel="noopener">Kahoot!</a>, más centrada en la gamificación y la competición entre estudiantes.</span><span lang="eu">Nire espezialitateko praktika profesionalerako gai egoki bat aukeratu dut, <strong>hezkuntza-orientazioa</strong>, eta ebaluazio formatiboko jarduera bat sortu dut <a href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>-rekin. Doako aplikazioa da, eta hainbat motatako galderak onartzen ditu (test motakoak, inkestak, egia/gezurra, erantzun laburrekoak, irudidun enuntziatuak…); azterketa, banakako ariketa edo lankidetzazko joko moduan lan egiteko aukera ematen du, eta amaieran klase osoaren txostena eskaintzen du. Antzeko aukera bat <a href="https://kahoot.com/" target="_blank" rel="noopener">Kahoot!</a> da, gamifikazioan eta ikasleen arteko lehian zentratuagoa.</span></p>
+            <p><span lang="es">He elegido un tema adecuado para la práctica profesional de mi especialidad, la <strong>orientación educativa</strong>, y he creado una actividad de evaluación formativa con <a href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>. Es una aplicación gratuita que admite preguntas de distintos tipos (tipo test, encuesta, verdadero/falso, respuesta corta, enunciados con imágenes…), permite trabajar en modo examen, ejercicio individual o juego colaborativo, y ofrece al final un informe global de la clase, lo que la convierte en una herramienta útil para evaluar el proceso de enseñanza-aprendizaje (Fernández Martínez, 2020). Una alternativa similar es <a href="https://kahoot.com/" target="_blank" rel="noopener">Kahoot!</a>, más centrada en la gamificación y la competición entre estudiantes.</span><span lang="eu">Nire espezialitateko praktika profesionalerako gai egoki bat aukeratu dut, <strong>hezkuntza-orientazioa</strong>, eta ebaluazio formatiboko jarduera bat sortu dut <a href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>-rekin. Doako aplikazioa da, eta hainbat motatako galderak onartzen ditu (test motakoak, inkestak, egia/gezurra, erantzun laburrekoak, irudidun enuntziatuak…); azterketa, banakako ariketa edo lankidetzazko joko moduan lan egiteko aukera ematen du, eta amaieran klase osoaren txostena eskaintzen du; horregatik, irakaskuntza-ikaskuntza prozesua ebaluatzeko tresna erabilgarria da (Fernández Martínez, 2020). Antzeko aukera bat <a href="https://kahoot.com/" target="_blank" rel="noopener">Kahoot!</a> da, gamifikazioan eta ikasleen arteko lehian zentratuagoa.</span></p>
             <!-- CAMBIAR: añadir aquí el tema concreto del test cuando lo tengas -->
             <h4><span lang="es">¿Qué se pide?</span><span lang="eu">Zer eskatzen da?</span></h4>
             <span class="reqs"><span class="req"><span class="rq-n">1</span><span lang="es">Preguntas tipo test y de respuesta corta</span><span lang="eu">Test motako eta erantzun laburreko galderak</span></span><span class="req"><span class="rq-n">2</span><span lang="es">Al menos una pregunta con la respuesta correcta marcada</span><span lang="eu">Gutxienez galdera bat, erantzun zuzena markatuta duena</span></span><span class="req"><span class="rq-n">3</span><span lang="es">Al menos una pregunta con imagen</span><span lang="eu">Gutxienez galdera bat irudiarekin</span></span><span class="req"><span class="rq-n">4</span><span lang="es">Al menos una pregunta con explicación</span><span lang="eu">Gutxienez galdera bat azalpenarekin</span></span></span>
@@ -934,14 +945,16 @@
               <a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">🔗</span><span class="dv-t"><span lang="es">Enlace para compartir el test</span><span lang="eu">Testa partekatzeko esteka</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a><a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">🖨️</span><span class="dv-t"><span lang="es">PDF del test para imprimir</span><span lang="eu">Testaren PDFa inprimatzeko</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a><a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">📊</span><span class="dv-t"><span lang="es">Informe con al menos 2 respuestas del alumnado</span><span lang="eu">Ikasleen gutxienez 2 erantzun dituen txostena</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a><a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">👤</span><span class="dv-t"><span lang="es">Informe individual del alumnado</span><span lang="eu">Ikaslearen banakako txostena</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a>
             </span>
             <h4><span lang="es">Bibliografía</span><span lang="eu">Bibliografia</span></h4>
+            <p class="ref">Cembreros, D. y Lara Nieto, N. (2026). <em>Introducción a la unidad Modelos BYOD. Uso de Socrative</em> [Material de la asignatura Tecnologías Aplicadas a las Didácticas Específicas]. Blackboard, Universidad Camilo José Cela.</p>
+            <p class="ref">Fernández Martínez, S. (2020). La evaluación del proceso de enseñanza-aprendizaje mediante el uso de Socrative: La experiencia en la asignatura Derecho del Trabajo y de la Seguridad Social. En A. M. Delgado García e I. Beltrán de Heredia Ruiz (Coords.), <em>La docencia del Derecho en línea: Cuando la innovación se convierte en necesidad</em> (pp. 183–192). Huygens; Universitat Oberta de Catalunya. <a href="https://investigacion.usc.gal/documentos/609922bac1fc724a4626f46c" target="_blank" rel="noopener">https://investigacion.usc.gal/documentos/609922bac1fc724a4626f46c</a></p>
             <p class="ref">Kahoot!. (s. f.). <em>Kahoot!</em> [Aplicación web]. <a href="https://kahoot.com/" target="_blank" rel="noopener">https://kahoot.com/</a></p>
             <p class="ref">Socrative. (s. f.). <em>Socrative</em> [Aplicación web]. <a href="https://www.socrative.com/" target="_blank" rel="noopener">https://www.socrative.com/</a></p>
             <p class="ref">Song, Y. (2014). "Bring your own device (BYOD)" for seamless science inquiry in a primary school. <em>Computers &amp; Education</em>, <em>74</em>, 50–60. <a href="https://doi.org/10.1016/j.compedu.2014.01.005" target="_blank" rel="noopener">https://doi.org/10.1016/j.compedu.2014.01.005</a></p>
           </span>
-        </button>
+        </div>
 
         <span class="act-gap lr" aria-hidden="true"><svg viewBox="0 0 100 70" preserveAspectRatio="none"><path d="M22 0 C 22 40, 78 30, 78 70"/></svg><span class="gd">♥</span></span>
-        <button class="card act" type="button">
+        <div class="card act" role="link" tabindex="0" data-href="#actividad-4">
           <span class="act-cover"><span class="cv-blob"></span><span class="n">04</span><span class="act-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/><path d="M10.5 9.5v5l4-2.5z"/></svg></span><span class="twk s1">✦</span></span>
           <span class="act-body-c">
           <span class="kick"><span class="kn">4</span><span lang="es">Clase invertida</span><span lang="eu">Alderantzizko ikasgela</span></span>
@@ -957,7 +970,7 @@
             <p class="ref">Bergmann, J. y Sams, A. (2012). <em>Flip your classroom: Reach every student in every class every day</em>. International Society for Technology in Education.</p>
             <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
           </span>
-        </button>
+        </div>
       </div>
     </div>
 
@@ -1289,7 +1302,10 @@
     const imgs = [...card.querySelectorAll(".card-gallery img")].slice(0, 2);
     if (imgs.length) { card.querySelector(".act-ico").remove(); imgs.forEach((im, k) => card.querySelector(".act-cover").insertAdjacentHTML("beforeend", '<img class="cv-card c' + k + '" src="' + im.getAttribute("src") + '" alt="">')); }
   });
-  document.querySelectorAll(".act").forEach((card, i) => card.addEventListener("click", () => { location.hash = "actividad-" + (i+1); }));
+  document.querySelectorAll(".act").forEach((card, i) => {
+    card.addEventListener("click", () => { location.hash = "actividad-" + (i+1); });
+    card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); location.hash = "actividad-" + (i+1); } });
+  });
 </script>
 </body>
 </html>
