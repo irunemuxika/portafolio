@@ -226,9 +226,12 @@
   .note-card .it-p{display:block;font-size:13.5px;line-height:1.55;color:var(--text)}
   .it-arrow{position:absolute;right:-60px;top:16px;width:70px;height:40px;overflow:visible;pointer-events:none}
   .it-arrow path{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-  .it-tiles{flex:1 !important;grid-template-columns:repeat(3,1fr) !important;gap:12px !important;align-content:center}
-  .it-t{padding:18px 8px !important}
-  .it-i{font-size:28px !important}
+  .it-list{list-style:none;margin:6px 0 0;padding:0;flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+  .it-list li{display:flex;align-items:center;gap:14px;padding:11px 2px;border-bottom:1px dashed var(--line);font-size:16px;font-weight:600;color:var(--text)}
+  .it-list li:last-child{border-bottom:0}
+  .it-list .it-i{font-size:22px;width:30px;text-align:center}
+  .it-list .it-n{flex:1}
+  .it-list .it-ok{color:var(--accent);font-weight:800}
   @media (max-width:600px){.it-tiles{grid-template-columns:repeat(3,1fr) !important}.it-arrow{display:none}}
   .subl{margin:4px 0 12px;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--accent)}
   .subl ~ .subl{margin-top:22px;padding-top:16px;border-top:1px dashed var(--line)}
@@ -944,9 +947,8 @@
             </ul>
           </div>
           <div class="card">
-            <p class="label"><span lang="es">Formación en TIC</span><span lang="eu">IKT prestakuntza</span></p>
-            <p class="mini"><span lang="es">Certificados IT Txartela:</span><span lang="eu">IT Txartela ziurtagiriak:</span></p>
-            <div class="it-tiles"><span class="it-t"><span class="it-i">📝</span>Word</span><span class="it-t"><span class="it-i">📊</span>Excel</span><span class="it-t"><span class="it-i">📽️</span>PowerPoint</span><span class="it-t"><span class="it-i">✉️</span>Outlook</span><span class="it-t"><span class="it-i">🌐</span>Internet</span></div>
+            <p class="label"><span lang="es">Formaciones en TIC – Certificados IT Txartela</span><span lang="eu">IKT prestakuntzak – IT Txartela ziurtagiriak</span></p>
+            <ul class="it-list"><li><span class="it-i">📝</span><span class="it-n">Word</span><span class="it-ok">✓</span></li><li><span class="it-i">📊</span><span class="it-n">Excel</span><span class="it-ok">✓</span></li><li><span class="it-i">📽️</span><span class="it-n">PowerPoint</span><span class="it-ok">✓</span></li><li><span class="it-i">✉️</span><span class="it-n">Outlook</span><span class="it-ok">✓</span></li><li><span class="it-i">🌐</span><span class="it-n">Internet</span><span class="it-ok">✓</span></li></ul>
           </div>
           </div>
         </div>
