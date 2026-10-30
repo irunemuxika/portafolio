@@ -529,6 +529,19 @@
     .act .cv-art{width:200px;margin:-62px 0 0 -70px}
     .act-gap svg path{d:path("M50 0 L50 70")}
   }
+
+  .reqs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+  .req{display:flex;align-items:flex-start;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-size:14.5px;line-height:1.45;color:var(--text)}
+  .rq-n{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--surface);font-family:var(--serif);font-weight:600;font-size:13px}
+  .delivs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:4px}
+  .deliv{display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:16px;background:var(--surface);border:1.5px solid var(--accent);text-decoration:none;color:var(--text);transition:.25s}
+  .deliv:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .deliv.pending{border-style:dashed;border-color:var(--line);pointer-events:none}
+  .dv-ico{font-size:24px}
+  .dv-t{font-weight:600;font-size:14.5px;line-height:1.35}
+  .dv-st{font-size:12px;font-weight:700;color:var(--accent)}
+  .deliv.pending .dv-st{color:var(--muted)}
+  @media (max-width:600px){.reqs{grid-template-columns:1fr}}
   .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
   .back:hover{color:var(--accent)}
   .act-page{max-width:800px}
@@ -896,16 +909,34 @@
           <span class="act-body-c">
           <span class="kick"><span class="kn">3</span><span lang="es">Dispositivos propios</span><span lang="eu">Gailu propioak</span></span>
           <h3><span lang="es">Modelos BYOD: trae tu propio dispositivo</span><span lang="eu">BYOD ereduak: ekarri zure gailua</span></h3>
-          <p><span lang="es">El alumnado aprende con sus propios dispositivos en el aula.</span><span lang="eu">Ikasleek beren gailuekin ikasten dute ikasgelan.</span></p>
+          <p><span lang="es">Los móviles del alumnado como herramienta de evaluación formativa en tiempo real con Socrative.</span><span lang="eu">Ikasleen mugikorrak denbora errealeko ebaluazio formatiborako tresna gisa, Socrative-rekin.</span></p>
           <span class="go"><span lang="es">Ver actividad →</span><span lang="eu">Jarduera ikusi →</span></span>
           </span>
           <span class="detail">
-            <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>BYOD</b></span><span class="fi-i"><small><span lang="es">Recursos</span><span lang="eu">Baliabideak</span></small><b><span lang="es">Dispositivos del alumnado</span><span lang="eu">Ikasleen gailuak</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Aprendizaje personalizado</span><span lang="eu">Ikaskuntza pertsonalizatua</span></b></span></span>
+            <span class="ficha"><span class="fi-i"><small><span lang="es">Modelo</span><span lang="eu">Eredua</span></small><b>BYOD</b></span><span class="fi-i"><small><span lang="es">Herramienta</span><span lang="eu">Tresna</span></small><b>Socrative</b></span><span class="fi-i"><small><span lang="es">Especialidad</span><span lang="eu">Espezialitatea</span></small><b><span lang="es">Orientación educativa</span><span lang="eu">Hezkuntza-orientazioa</span></b></span><span class="fi-i"><small><span lang="es">Enfoque</span><span lang="eu">Ikuspegia</span></small><b><span lang="es">Evaluación formativa en tiempo real</span><span lang="eu">Denbora errealeko ebaluazio formatiboa</span></b></span></span>
+            <h4><span lang="es">Introducción</span><span lang="eu">Sarrera</span></h4>
+            <p><span lang="es">En este tema trabajamos el uso de los dispositivos móviles en el aula y sus aplicaciones para la <strong>evaluación formativa en tiempo real</strong>. Para abrir el debate, partimos de esta reflexión:</span><span lang="eu">Gai honetan gailu mugikorrak ikasgelan nola erabili lantzen dugu, baita <strong>denbora errealeko ebaluazio formatiboan</strong> dituzten aplikazioak ere. Eztabaida irekitzeko, gogoeta honetatik abiatzen gara:</span></p>
+            <blockquote class="quote-box">
+              <span lang="es">«¿Dejamos de prohibir los móviles en el aula y los convertimos en herramientas de aprendizaje? ¿Por qué no dejamos que los alumnos y alumnas utilicen sus propios dispositivos? En los casos en los que no disponga de ellos, el propio centro puede tener una batería de ellos a disposición de los que lo necesiten, ayudando así a romper la brecha digital por causas económicas. Pues bien, esta puede ser una buena solución, y ya está bautizada, es el modelo BYOD (Bring your Own Device), o sea, 'trae tu propio dispositivo'.»</span><span lang="eu">«Mugikorrak ikasgelan debekatzeari utzi eta ikaskuntza-tresna bihurtzen baditugu? Zergatik ez diegu uzten ikasleei beren gailuak erabiltzen? Gailurik ez duten kasuetan, ikastetxeak berak gailu sorta bat izan dezake behar dutenen eskura, eta horrela arrazoi ekonomikoengatiko arrakala digitala hausten lagundu. Bada, hori irtenbide ona izan daiteke, eta badu izena: BYOD eredua (Bring your Own Device), hau da, 'ekarri zure gailua'.» <em>(Jatorrizkoa gaztelaniaz)</em></span>
+              <cite><span lang="es">Juanmi Muñoz, pedagogo, maestro y responsable TAC (SOCEA, Departament d'Ensenyament); consultor de la Universitat Oberta de Catalunya y expresidente de Espiral.</span><span lang="eu">Juanmi Muñoz, pedagogoa, maisua eta IKT arduraduna (SOCEA, Departament d'Ensenyament); Universitat Oberta de Catalunyako aholkularia eta Espiral elkarteko presidente ohia.</span></cite>
+            </blockquote>
             <h4><span lang="es">¿Qué es el modelo BYOD?</span><span lang="eu">Zer da BYOD eredua?</span></h4>
             <p><span lang="es">BYOD (<em>Bring Your Own Device</em>, «trae tu propio dispositivo») es un modelo en el que el alumnado utiliza sus propios dispositivos —móviles, tabletas u ordenadores portátiles— como herramienta de aprendizaje en el aula. Favorece la personalización, el acceso a recursos digitales y la continuidad entre el aprendizaje dentro y fuera del aula, aunque exige planificar aspectos como la equidad de acceso, la conectividad, la seguridad y el uso responsable (Song, 2014).</span><span lang="eu">BYOD (<em>Bring Your Own Device</em>, «ekarri zure gailua») ikasleek beren gailuak —mugikorrak, tabletak edo eramangarriak— ikasgelan ikaskuntza-tresna gisa erabiltzen dituzten eredua da. Pertsonalizazioa, baliabide digitaletarako sarbidea eta ikasgela barruko eta kanpoko ikaskuntzaren arteko jarraitutasuna errazten ditu, baina aldez aurretik planifikatu behar dira sarbide-ekitatea, konexioa, segurtasuna eta erabilera arduratsua (Song, 2014).</span></p>
+            <p><span lang="es">Una de sus aplicaciones prácticas es utilizar los móviles del alumnado para la evaluación formativa: el docente envía preguntas tipo test o de respuesta corta, el alumnado recibe <strong>feedback inmediato</strong> y el profesorado obtiene las respuestas <strong>en tiempo real</strong>.</span><span lang="eu">Aplikazio praktikoetako bat ikasleen mugikorrak ebaluazio formatiborako erabiltzea da: irakasleak test motako edo erantzun laburreko galderak bidaltzen ditu, ikasleek <strong>berehalako feedbacka</strong> jasotzen dute eta irakasleak erantzunak <strong>denbora errealean</strong> lortzen ditu.</span></p>
+            <h4><span lang="es">La práctica</span><span lang="eu">Praktika</span></h4>
+            <p><span lang="es">He elegido un tema adecuado para la práctica profesional de mi especialidad, la <strong>orientación educativa</strong>, y he creado una actividad de evaluación formativa con <a href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>. Es una aplicación gratuita que admite preguntas de distintos tipos (tipo test, encuesta, verdadero/falso, respuesta corta, enunciados con imágenes…), permite trabajar en modo examen, ejercicio individual o juego colaborativo, y ofrece al final un informe global de la clase. Una alternativa similar es <a href="https://kahoot.com/" target="_blank" rel="noopener">Kahoot!</a>, más centrada en la gamificación y la competición entre estudiantes.</span><span lang="eu">Nire espezialitateko praktika profesionalerako gai egoki bat aukeratu dut, <strong>hezkuntza-orientazioa</strong>, eta ebaluazio formatiboko jarduera bat sortu dut <a href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>-rekin. Doako aplikazioa da, eta hainbat motatako galderak onartzen ditu (test motakoak, inkestak, egia/gezurra, erantzun laburrekoak, irudidun enuntziatuak…); azterketa, banakako ariketa edo lankidetzazko joko moduan lan egiteko aukera ematen du, eta amaieran klase osoaren txostena eskaintzen du. Antzeko aukera bat <a href="https://kahoot.com/" target="_blank" rel="noopener">Kahoot!</a> da, gamifikazioan eta ikasleen arteko lehian zentratuagoa.</span></p>
+            <!-- CAMBIAR: añadir aquí el tema concreto del test cuando lo tengas -->
+            <h4><span lang="es">¿Qué se pide?</span><span lang="eu">Zer eskatzen da?</span></h4>
+            <span class="reqs"><span class="req"><span class="rq-n">1</span><span lang="es">Preguntas tipo test y de respuesta corta</span><span lang="eu">Test motako eta erantzun laburreko galderak</span></span><span class="req"><span class="rq-n">2</span><span lang="es">Al menos una pregunta con la respuesta correcta marcada</span><span lang="eu">Gutxienez galdera bat, erantzun zuzena markatuta duena</span></span><span class="req"><span class="rq-n">3</span><span lang="es">Al menos una pregunta con imagen</span><span lang="eu">Gutxienez galdera bat irudiarekin</span></span><span class="req"><span class="rq-n">4</span><span lang="es">Al menos una pregunta con explicación</span><span lang="eu">Gutxienez galdera bat azalpenarekin</span></span></span>
+            <h4><span lang="es">Entregables</span><span lang="eu">Entregagarriak</span></h4>
+            <span class="delivs">
+              <!-- CAMBIAR: sustituye href="#" por el enlace o archivo real de cada entregable y quita la clase "pending" -->
+              <a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">🔗</span><span class="dv-t"><span lang="es">Enlace para compartir el test</span><span lang="eu">Testa partekatzeko esteka</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a><a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">🖨️</span><span class="dv-t"><span lang="es">PDF del test para imprimir</span><span lang="eu">Testaren PDFa inprimatzeko</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a><a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">📊</span><span class="dv-t"><span lang="es">Informe con al menos 2 respuestas del alumnado</span><span lang="eu">Ikasleen gutxienez 2 erantzun dituen txostena</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a><a class="deliv pending" href="#" target="_blank" rel="noopener"><span class="dv-ico">👤</span><span class="dv-t"><span lang="es">Informe individual del alumnado</span><span lang="eu">Ikaslearen banakako txostena</span></span><span class="dv-st"><span lang="es">Próximamente</span><span lang="eu">Laster</span></span></a>
+            </span>
             <h4><span lang="es">Bibliografía</span><span lang="eu">Bibliografia</span></h4>
+            <p class="ref">Kahoot!. (s. f.). <em>Kahoot!</em> [Aplicación web]. <a href="https://kahoot.com/" target="_blank" rel="noopener">https://kahoot.com/</a></p>
+            <p class="ref">Socrative. (s. f.). <em>Socrative</em> [Aplicación web]. <a href="https://www.socrative.com/" target="_blank" rel="noopener">https://www.socrative.com/</a></p>
             <p class="ref">Song, Y. (2014). "Bring your own device (BYOD)" for seamless science inquiry in a primary school. <em>Computers &amp; Education</em>, <em>74</em>, 50–60. <a href="https://doi.org/10.1016/j.compedu.2014.01.005" target="_blank" rel="noopener">https://doi.org/10.1016/j.compedu.2014.01.005</a></p>
-            <!-- CAMBIAR: añadir aquí la práctica cuando esté hecha -->
           </span>
         </button>
 
@@ -1207,6 +1238,7 @@
     pide: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/>',
     biblio: '<path d="M4 4h4v16H4zM10 4h4v16h-4z"/><path d="M16.5 5.2l3.8-1 3.2 15.4-3.8 1z"/>',
     cartas: '<rect x="3" y="5" width="11" height="15" rx="2" transform="rotate(-8 8 12)"/><rect x="10" y="4" width="11" height="15" rx="2"/>',
+    entrega: '<path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>',
     otro: '<path d="M2 5c3-1.5 7-1.5 10 1 3-2.5 7-2.5 10-1v14c-3-1.5-7-1.5-10 1-3-2.5-7-2.5-10-1z"/><path d="M12 6v14"/>'
   };
   const svgI = d => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>';
@@ -1221,7 +1253,7 @@
     });
     secs.forEach((sc, i) => {
       const t = sc.h ? ((sc.h.querySelector('[lang="es"]') || sc.h).textContent).toLowerCase() : "";
-      const key = t.includes("introduc") ? "intro" : t.startsWith("¿qué es") ? "que" : t.includes("práctica") ? "practica" : t.includes("pide") ? "pide" : t.includes("bibliograf") ? "biblio" : t.includes("propuesta") || t.includes("hearthcards") ? "cartas" : "otro";
+      const key = t.includes("introduc") ? "intro" : t.startsWith("¿qué es") ? "que" : t.includes("práctica") ? "practica" : t.includes("pide") ? "pide" : t.includes("entregable") ? "entrega" : t.includes("bibliograf") ? "biblio" : t.includes("propuesta") || t.includes("hearthcards") ? "cartas" : "otro";
       const content = sc.parts.map(p => p.nodeType === 1 ? p.outerHTML : p.textContent).join("");
       html += '<section class="blk ' + (key === "intro" ? "intro" : "") + '" style="--d:' + i + '">' +
         (sc.h ? '<div class="blk-h"><span class="blk-ico">' + svgI(ICONS[key]) + '</span><h4>' + sc.h.innerHTML + '</h4></div>' : '') +
