@@ -293,6 +293,15 @@
     border-bottom:1.5px solid currentColor;padding-bottom:2px}
   .pro-links a:hover{color:var(--clay)}
   @media (max-width:700px){.pro{grid-template-columns:1fr}.pro-photo{max-width:240px}}
+  /* Texto de "Sobre mí" más ancho: la foto flota y el texto la rodea */
+  .pro{display:block}
+  .pro::after{content:"";display:block;clear:both}
+  .pro > .fig{float:left;width:170px;margin:4px 30px 12px 0}
+  .pro-text p{max-width:none}
+  .intro-grid{grid-template-columns:1fr 290px}
+  .intro-grid > .studies{display:flex;flex-direction:column}
+  .intro-grid > .studies .principles{flex:1;align-content:space-evenly}
+  @media (max-width:700px){.pro > .fig{float:none;width:200px;margin:0 auto 18px}}
   @media (prefers-reduced-motion:reduce){.pro-photo,.pro-photo::before,.pro-photo img{animation:none}}
 
   /* Línea del tiempo horizontal (todo a la vista) */
