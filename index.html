@@ -212,6 +212,12 @@
   .extra{margin-top:44px}
   .form-grid{align-items:start}
   .form-col{display:flex;flex-direction:column;gap:20px}
+  .form-grid{align-items:stretch !important}
+  .form-col > .card:last-child{flex:1;display:flex;flex-direction:column}
+  .it-tiles{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-content:center}
+  .it-t{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border-radius:16px;background:var(--clay-soft);color:var(--clay);font-weight:700;font-size:14px;transition:transform .25s}
+  .it-t:hover{transform:translateY(-3px) rotate(-2deg)}
+  .it-i{font-size:26px;line-height:1}
   .subl{margin:4px 0 12px;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--accent)}
   .subl ~ .subl{margin-top:22px;padding-top:16px;border-top:1px dashed var(--line)}
   .mini{margin:0 0 12px;color:var(--muted);font-size:14.5px}
@@ -924,9 +930,7 @@
           <div class="card">
             <p class="label"><span lang="es">Formación en TIC</span><span lang="eu">IKT prestakuntza</span></p>
             <p class="mini"><span lang="es">Certificados IT Txartela:</span><span lang="eu">IT Txartela ziurtagiriak:</span></p>
-            <div class="chips">
-              <span class="chip">Word</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Outlook</span><span class="chip">Internet</span>
-            </div>
+            <div class="it-tiles"><span class="it-t"><span class="it-i">📝</span>Word</span><span class="it-t"><span class="it-i">📊</span>Excel</span><span class="it-t"><span class="it-i">📽️</span>PowerPoint</span><span class="it-t"><span class="it-i">✉️</span>Outlook</span><span class="it-t"><span class="it-i">🌐</span>Internet</span></div>
           </div>
           </div>
         </div>
@@ -1064,7 +1068,7 @@
             </span>
             <span class="proc">
               <span class="proc-h"><span lang="es">🛠️ Herramienta y proceso de elaboración</span><span lang="eu">🛠️ Tresna eta prestaketa-prozesua</span></span>
-              <span class="proc-p"><span lang="es"><strong>Elaboración propia con apoyo de IA.</strong> Para preparar el test pedí a <strong>Claude (Anthropic, 2026)</strong> una propuesta de preguntas basada en los saberes básicos del Bloque 1 del Decreto 76/2023 (p. 498) y en las actividades de mi Padlet (<a href="#actividad-1">actividad 1</a>), ordenadas de menor a mayor nivel según la Taxonomía de Bloom revisada (Anderson y Krathwohl, 2001). Claude propuso 16 preguntas con la respuesta correcta marcada; a partir de ellas seleccioné, revisé y adapté 15 en Socrative, desde <em>recordar</em> (definiciones, autores) hasta <em>aplicar</em> y <em>evaluar</em> (identificar métodos en casos reales, valorar la fiabilidad de una fuente).</span><span lang="eu"><strong>Egileak egina, AAren laguntzarekin.</strong> Testa prestatzeko, <strong>Claude</strong>-ri (Anthropic, 2026) galdera-proposamen bat eskatu nion, 76/2023 Dekretuko 1. blokeko oinarrizko jakintzetan (498. or.) eta nire Padleteko jardueretan (<a href="#actividad-1">1. jarduera</a>) oinarrituta, Bloomen taxonomia berrikusiaren arabera mailarik txikienetik handienera ordenatuta (Anderson eta Krathwohl, 2001). Claudek 16 galdera proposatu zituen, erantzun zuzena markatuta; horietatik 15 hautatu, berrikusi eta egokitu nituen Socrative-n, <em>gogoratzetik</em> (definizioak, egileak) <em>aplikatzera</em> eta <em>ebaluatzera</em> (benetako kasuetan metodoak identifikatzea, iturri baten fidagarritasuna balioestea).</span></span>
+              <span class="proc-p"><span lang="es"><strong>Elaboración propia con apoyo de IA.</strong> Para preparar el test pedí a <strong>Claude (Anthropic, 2026)</strong> una propuesta de preguntas basada en los saberes básicos del Bloque 1 del Decreto 76/2023 (p. 498) y en las actividades de mi Padlet (<a href="#actividad-1">actividad 1</a>), ordenadas de menor a mayor nivel según la Taxonomía de Bloom revisada (Anderson y Krathwohl, 2001). Claude propuso 20 preguntas con la respuesta correcta marcada; a partir de ellas seleccioné, revisé y adapté 15 en Socrative, desde <em>recordar</em> (definiciones, autores) hasta <em>aplicar</em> y <em>evaluar</em> (identificar métodos en casos reales, valorar la fiabilidad de una fuente).</span><span lang="eu"><strong>Egileak egina, AAren laguntzarekin.</strong> Testa prestatzeko, <strong>Claude</strong>-ri (Anthropic, 2026) galdera-proposamen bat eskatu nion, 76/2023 Dekretuko 1. blokeko oinarrizko jakintzetan (498. or.) eta nire Padleteko jardueretan (<a href="#actividad-1">1. jarduera</a>) oinarrituta, Bloomen taxonomia berrikusiaren arabera mailarik txikienetik handienera ordenatuta (Anderson eta Krathwohl, 2001). Claudek 20 galdera proposatu zituen, erantzun zuzena markatuta; horietatik 15 hautatu, berrikusi eta egokitu nituen Socrative-n, <em>gogoratzetik</em> (definizioak, egileak) <em>aplikatzera</em> eta <em>ebaluatzera</em> (benetako kasuetan metodoak identifikatzea, iturri baten fidagarritasuna balioestea).</span></span>
               <span class="proc-h" style="margin-top:14px"><span lang="es">💬 Prompt utilizado</span><span lang="eu">💬 Erabilitako prompta</span></span>
               <!-- CAMBIAR: si conservas el texto exacto del prompt, sustitúyelo aquí -->
               <span class="prompt"><span lang="es">«Elabora una propuesta de preguntas para un test de evaluación formativa en Socrative, para Psicología de 2.º de Bachillerato, a partir de los saberes básicos del Bloque 1 del Decreto 76/2023 (p. 498) y de las actividades de mi Padlet. Ordénalas de menor a mayor nivel según la Taxonomía de Bloom y marca la respuesta correcta.»</span><span lang="eu">«Egin Socrative-n ebaluazio formatiboko test baterako galdera-proposamen bat, Batxilergoko 2. mailako Psikologiarako, 76/2023 Dekretuko 1. blokeko oinarrizko jakintzetatik (498. or.) eta nire Padleteko jardueretatik abiatuta. Ordenatu itzazu Bloomen taxonomiaren arabera, mailarik txikienetik handienera, eta markatu erantzun zuzena.»</span></span>
@@ -1325,7 +1329,7 @@
             <!-- CAMBIAR: añade o borra filas -->
             <tr>
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
-              <td><span lang="es">Diseñar y programar la web (HTML, CSS y JavaScript): estructura, estética, animaciones y versión para móvil. También me guio para publicarla en GitHub Pages.</span><span lang="eu">Webgunea diseinatu eta programatu (HTML, CSS eta JavaScript): egitura, estetika, animazioak eta mugikorrerako bertsioa. GitHub Pages-en argitaratzeko gidatu ninduen ere.</span></td>
+              <td><span lang="es">Diseñar y programar la web (HTML, CSS y JavaScript): estructura, estética, animaciones y versión para móvil. Guiar en la publicación en GitHub Pages.</span><span lang="eu">Webgunea diseinatu eta programatu (HTML, CSS eta JavaScript): egitura, estetika, animazioak eta mugikorrerako bertsioa. GitHub Pages-en argitaratzeko gidatzea.</span></td>
               <td><span lang="es">Toda la web</span><span lang="eu">Webgune osoa</span></td>
             </tr>
             <tr>
@@ -1350,7 +1354,7 @@
             </tr>
             <tr>
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
-              <td><span lang="es">Proponer 16 preguntas para el test de Socrative a partir de los saberes básicos del Decreto 76/2023, mi Padlet y la Taxonomía de Bloom. Seleccioné, revisé y adapté 15.</span><span lang="eu">Socrative-ko testerako 16 galdera proposatu, 76/2023 Dekretuko oinarrizko jakintzetatik, nire Padletetik eta Bloomen taxonomiatik abiatuta. 15 hautatu, berrikusi eta egokitu nituen.</span></td>
+              <td><span lang="es">Proponer 20 preguntas para el test de Socrative a partir de los saberes básicos del Decreto 76/2023, mi Padlet y la Taxonomía de Bloom. Seleccioné, revisé y adapté 15.</span><span lang="eu">Socrative-ko testerako 20 galdera proposatu, 76/2023 Dekretuko oinarrizko jakintzetatik, nire Padletetik eta Bloomen taxonomiatik abiatuta. 15 hautatu, berrikusi eta egokitu nituen.</span></td>
               <td><span lang="es">Actividad 3</span><span lang="eu">3. jarduera</span></td>
             </tr>
           </tbody>
@@ -1359,12 +1363,12 @@
 
       <div class="grid-2" style="margin-top:20px">
         <div class="card">
-          <h3><span lang="es">Cómo la he usado</span><span lang="eu">Nola erabili dudan</span></h3>
+          <h3><span lang="es">Cómo se ha utilizado</span><span lang="eu">Nola erabili den</span></h3>
           <ul class="principles">
-            <li><span lang="es">Como apoyo: yo decidía el contenido, la estructura y el estilo, y la IA proponía y ejecutaba.</span><span lang="eu">Laguntza gisa: nik erabakitzen nituen edukia, egitura eta estiloa, eta AAk proposatu eta gauzatzen zuen.</span></li>
+            <li><span lang="es">La IA propone y ejecuta; yo decido el contenido, la estructura y el estilo.</span><span lang="eu">AAk proposatu eta gauzatzen du; nik erabakitzen ditut edukia, egitura eta estiloa.</span></li>
             <li><span lang="es">Revisando todo lo que generaba y corrigiendo datos, nombres y textos cuando no eran exactos.</span><span lang="eu">Sortzen zuen guztia berrikusiz, eta datuak, izenak eta testuak zuzenduz zehatzak ez zirenean.</span></li>
-            <li><span lang="es">Descartando lo que no me representaba: por ejemplo, un primer retrato dibujado que no me convencía.</span><span lang="eu">Ni ordezkatzen ez ninduena baztertuz: adibidez, konbentzitzen ez ninduen lehen erretratu marraztu bat.</span></li>
-            <li><span lang="es">Siendo transparente: en esta sección explico qué partes se han hecho con IA.</span><span lang="eu">Gardena izanez: atal honetan azaltzen dut zein zati egin diren AArekin.</span></li>
+            <li><span lang="es">Descartando todo lo que no me representaba o contenía datos incorrectos.</span><span lang="eu">Ni ordezkatzen ez ninduen edo datu okerrak zituen guztia baztertuz.</span></li>
+            <li><span lang="es">Con transparencia: indico qué herramientas se han utilizado para desarrollar todo el trabajo.</span><span lang="eu">Gardentasunez: lan osoa garatzeko zein tresna erabili diren adierazten dut.</span></li>
           </ul>
         </div>
         <div class="card">
