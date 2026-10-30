@@ -218,13 +218,27 @@
   .it-t{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border-radius:16px;background:var(--clay-soft);color:var(--clay);font-weight:700;font-size:14px;transition:transform .25s}
   .it-t:hover{transform:translateY(-3px) rotate(-2deg)}
   .it-i{font-size:26px;line-height:1}
+  .note-card{position:relative;display:block;margin:30px 8px 4px 0;padding:22px 20px 16px;background:var(--accent-soft);border:1.5px dashed var(--accent);
+    border-radius:16px;transform:rotate(1.2deg);box-shadow:var(--shadow);animation:sway2b 8s ease-in-out infinite}
+  @keyframes sway2b{0%,100%{transform:rotate(1.2deg)}50%{transform:rotate(.2deg) translateY(-3px)}}
+  .note-card .pin{position:absolute;top:-14px;left:22px;font-size:22px;transform:rotate(-15deg)}
+  .note-card .nc-t{display:block;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--accent);margin-bottom:6px}
+  .note-card .it-p{display:block;font-size:13.5px;line-height:1.55;color:var(--text)}
+  .it-arrow{position:absolute;right:-60px;top:16px;width:70px;height:40px;overflow:visible;pointer-events:none}
+  .it-arrow path{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .it-tiles{flex:1 !important;grid-template-columns:repeat(3,1fr) !important;gap:12px !important;align-content:center}
+  .it-t{padding:18px 8px !important}
+  .it-i{font-size:28px !important}
+  @media (max-width:600px){.it-tiles{grid-template-columns:repeat(3,1fr) !important}.it-arrow{display:none}}
   .subl{margin:4px 0 12px;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--accent)}
   .subl ~ .subl{margin-top:22px;padding-top:16px;border-top:1px dashed var(--line)}
   .mini{margin:0 0 12px;color:var(--muted);font-size:14.5px}
   .lang-level{display:flex;align-items:center;gap:14px}
   .lang-level b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:16px;padding:10px 16px}
   .lang-level>span{font-weight:600;font-size:18px}
-  .robin{width:64px;height:58px;margin-left:auto;overflow:visible}
+  .robin{flex:none;width:78px;height:70px;margin:0;overflow:visible}
+  .lang-name{font-family:var(--serif);font-weight:600;font-size:26px;display:flex;align-items:center;gap:10px}
+  .lang-name .lvl{font-style:normal;font-family:var(--sans);font-size:15px;font-weight:700;color:#fff;background:var(--accent);padding:4px 12px;border-radius:999px}
   .robin-body{animation:hop 4s ease-in-out infinite;transform-origin:40px 68px}
   .robin-head{animation:tilt 4s ease-in-out infinite;transform-box:fill-box;transform-origin:30% 80%}
   @keyframes hop{0%,60%,100%{transform:translateY(0)}68%{transform:translateY(-7px)}76%{transform:translateY(0)}82%{transform:translateY(-3px)}88%{transform:translateY(0)}}
@@ -275,8 +289,8 @@
   .portrait:hover .me-wrap img{transform:scale(1.06)}
   .hero-side{align-self:start}
   @media (max-width:760px){.pres-head{grid-template-columns:1fr}.pres-head .portrait{order:-1;width:190px;margin:10px auto 26px}}
-  .robin-note{width:auto;max-width:300px;margin:36px 0 0 auto;transform:rotate(2deg);animation:sway 7s ease-in-out infinite}
-  .robin-arrow{position:absolute;right:6px;top:-42px;width:60px;height:50px;overflow:visible;pointer-events:none}
+  .robin-note{width:auto;max-width:300px;margin:36px auto 0 10px;transform:rotate(2deg);animation:sway 7s ease-in-out infinite}
+  .robin-arrow{position:absolute;left:14px;top:-42px;transform:scaleX(-1);width:60px;height:50px;overflow:visible;pointer-events:none}
   .robin-arrow path{fill:none;stroke:var(--clay);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
   @keyframes sway{0%,100%{transform:rotate(3deg)}50%{transform:rotate(1.5deg) translateY(-3px)}}
   @media (max-width:760px){.hero-side{display:contents}.postit{order:2;margin:10px auto 0;width:min(320px,100%);align-self:auto}.postit-arrow{display:none}}
@@ -307,6 +321,8 @@
   .intro-grid{grid-template-columns:1fr 290px}
   .intro-grid > .studies{display:flex;flex-direction:column}
   .intro-grid > .studies .principles{flex:1;align-content:space-evenly}
+  @media (max-width:980px){.intro-grid{grid-template-columns:1fr}}
+  .form-col > .card:nth-child(2){display:flex;flex-direction:column}
   @media (max-width:700px){.pro > .fig{float:none;width:200px;margin:0 auto 18px}}
   @media (prefers-reduced-motion:reduce){.pro-photo,.pro-photo::before,.pro-photo img{animation:none}}
 
@@ -885,8 +901,7 @@
           </div>
           <div class="card">
             <p class="label"><span lang="es">Idiomas</span><span lang="eu">Hizkuntzak</span></p>
-            <div class="lang-level"><b>C1</b><span><span lang="es">Euskera</span><span lang="eu">Euskara</span></span>
-            <svg class="robin" viewBox="0 0 80 72" role="img" aria-label="Txantxangorria">
+            <div class="lang-level"><svg class="robin" viewBox="0 0 80 72" role="img" aria-label="Txantxangorria">
               <g class="robin-body">
                 <path d="M16 42 L2 35 L6 49 Z" fill="#7a5c45"/>
                 <ellipse cx="38" cy="42" rx="24" ry="19" fill="#8a6a50"/>
@@ -902,12 +917,13 @@
                   <path d="M66 27 L75 29.5 L66 32 Z" fill="#3a2f28"/>
                 </g>
               </g>
-            </svg></div>
+            </svg><span class="lang-name"><span lang="es">Euskera – C1</span><span lang="eu">Euskara – C1</span></span></div>
             <aside class="postit robin-note" role="note">
               <svg class="robin-arrow" viewBox="0 0 60 50" aria-hidden="true"><path class="pa-line" d="M40 2 C 52 16, 46 32, 30 44"/><path class="pa-head" d="M27 34 L29 45 L39 42"/></svg>
               <p class="postit-t"><span lang="es">¡Curiosidad!</span><span lang="eu">Bitxikeria!</span></p>
               <p><span lang="es">El petirrojo (<em>txantxangorri</em> en euskera) fue elegido como imagen unificada para promover el uso del euskera de forma amable, cercana y cotidiana en la calle, el comercio y las instituciones: «Eman hegoak euskarari» (Dale alas al euskera).</span><span lang="eu">Txantxangorria irudi bateratu gisa aukeratu zen euskararen erabilera modu atsegin, hurbil eta egunerokoan sustatzeko kalean, merkataritzan eta erakundeetan: «Eman hegoak euskarari».</span></p>
             </aside>
+            <aside class="note-card it-note" role="note"><span class="pin" aria-hidden="true">📌</span><svg class="it-arrow" viewBox="0 0 70 40" aria-hidden="true"><path class="pa-line" d="M4 30 C 24 38, 48 30, 64 10"/><path class="pa-head" d="M52 9 L65 9 L63 22"/></svg><span class="nc-t"><span lang="es">¿Qué es la IT Txartela?</span><span lang="eu">Zer da IT Txartela?</span></span><span class="it-p"><span lang="es">La IT Txartela es un sistema oficial de certificación de competencias básicas en Tecnologías de la Información y la Comunicación (TIC) que acredita los conocimientos de una persona en el uso de herramientas informáticas e Internet.</span><span lang="eu">IT Txartela Informazioaren eta Komunikazioaren Teknologietako (IKT) oinarrizko gaitasunak egiaztatzeko sistema ofiziala da, eta pertsona batek tresna informatikoak eta Internet erabiltzeko dituen ezagutzak egiaztatzen ditu.</span></span></aside>
           </div>
           </div>
           <div class="form-col">
