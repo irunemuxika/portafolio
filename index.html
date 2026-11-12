@@ -725,6 +725,22 @@
   .cv-act a{text-decoration:none}
   .cv-act button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:16px;cursor:pointer}
   #cvFrame{flex:1;width:100%;border:0;background:#525659}
+  .taia-card{margin-bottom:20px}
+  .taia-grid{display:grid;grid-template-columns:1fr 1.6fr 1fr auto auto;gap:18px;align-items:start}
+  .taia-grid small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);margin-bottom:4px}
+  .taia-grid b{font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.3}
+  .taia-grid .lv{text-align:center;background:var(--accent-soft);border-radius:14px;padding:10px 16px}
+  .taia-grid .lv b{display:block;font-size:36px;color:var(--accent);line-height:1}
+  .taia-def{margin:18px 0 0;padding-top:16px;border-top:1px dashed var(--line);color:var(--muted);font-size:15px}
+  .taia{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;font-family:var(--serif);font-weight:600;font-size:17px;color:#fff}
+  .taia.t2{background:#8fb3a5}.taia.t3{background:var(--accent)}.taia.t4{background:var(--clay)}
+  .taia-legend{margin:10px 4px 0;font-size:13.5px;color:var(--muted)}
+  .taia-sign{margin-top:20px;border-left:4px solid var(--accent)}
+  .taia-sign p{margin:0 0 10px}
+  .taia-firma{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:baseline;margin-top:14px !important}
+  .taia-firma .sig{font-family:"Caveat",cursive;font-size:30px;color:var(--accent)}
+  .taia-src{font-size:12.5px;color:var(--muted);font-style:italic}
+  @media (max-width:760px){.taia-grid{grid-template-columns:1fr 1fr}}
   .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
   .back:hover{color:var(--accent)}
   .act-page{max-width:800px}
@@ -1370,7 +1386,18 @@
     <div class="view" id="v-ia" hidden>
       <p class="eyebrow">✦ <span lang="es">Inteligencia artificial</span><span lang="eu">Adimen artifiziala</span></p>
       <h2 class="page-title"><span lang="es">Uso de la IA</span><span lang="eu">AAren erabilera</span></h2>
-      <p class="sub"><span lang="es">Qué herramientas de IA he utilizado, para qué y cómo he revisado sus resultados.</span><span lang="eu">Zein AA tresna erabili ditudan, zertarako eta haien emaitzak nola berrikusi ditudan.</span></p>
+      <p class="sub"><span lang="es">Declaración de uso de inteligencia artificial conforme a la Normativa de Uso de IA en Trabajos Académicos de la Facultad de Educación de la UCJC.</span><span lang="eu">Adimen artifizialaren erabilera-adierazpena, UCJCko Hezkuntza Fakultateko Lan Akademikoetan AA Erabiltzeko Araudiaren arabera.</span></p>
+
+      <div class="card taia-card">
+        <div class="taia-grid">
+          <div><small><span lang="es">Estudiante</span><span lang="eu">Ikaslea</span></small><b>Irune Muxika Pon</b></div>
+          <div><small><span lang="es">Asignatura</span><span lang="eu">Irakasgaia</span></small><b><span lang="es">Tecnologías Aplicadas a las Didácticas Específicas</span><span lang="eu">Didaktika Espezifikoei Aplikatutako Teknologiak</span></b></div>
+          <div><small><span lang="es">Trabajo</span><span lang="eu">Lana</span></small><b><span lang="es">Portafolio digital</span><span lang="eu">Portfolio digitala</span></b></div>
+          <div class="lv"><small><span lang="es">Nivel TAIA autorizado</span><span lang="eu">Baimendutako TAIA maila</span></small><b>4</b></div>
+          <div class="lv"><small><span lang="es">Nivel TAIA declarado</span><span lang="eu">Adierazitako TAIA maila</span></small><b>4</b></div>
+        </div>
+        <p class="taia-def"><span lang="es"><strong>Nivel 4 · IA como herramienta principal de producción:</strong> la IA ha generado una parte sustancial del contenido del trabajo, y yo he actuado como supervisora, editora y garante del rigor del resultado final. En la tabla se indica el nivel que corresponde a cada tarea.</span><span lang="eu"><strong>4. maila · AA ekoizpen-tresna nagusi gisa:</strong> AAk lanaren edukiaren zati handi bat sortu du, eta ni azken emaitzaren gainbegirale, editore eta zorroztasunaren bermatzaile izan naiz. Taulan zeregin bakoitzari dagokion maila adierazten da.</span></p>
+      </div>
 
       <div class="card table-wrap">
         <table>
@@ -1379,6 +1406,7 @@
               <th><span lang="es">Herramienta</span><span lang="eu">Tresna</span></th>
               <th><span lang="es">Para qué la he usado</span><span lang="eu">Zertarako erabili dut</span></th>
               <th><span lang="es">Dónde</span><span lang="eu">Non</span></th>
+              <th><span lang="es">Nivel TAIA</span><span lang="eu">TAIA maila</span></th>
             </tr>
           </thead>
           <tbody>
@@ -1387,35 +1415,42 @@
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
               <td><span lang="es">Diseñar y programar la web (HTML, CSS y JavaScript): estructura, estética, animaciones y versión para móvil. Guiar en la publicación en GitHub Pages.</span><span lang="eu">Webgunea diseinatu eta programatu (HTML, CSS eta JavaScript): egitura, estetika, animazioak eta mugikorrerako bertsioa. GitHub Pages-en argitaratzeko gidatzea.</span></td>
               <td><span lang="es">Toda la web</span><span lang="eu">Webgune osoa</span></td>
+              <td><span class="taia t4">4</span></td>
             </tr>
             <tr>
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
               <td><span lang="es">Redactar y pulir textos a partir de mis indicaciones.</span><span lang="eu">Nire jarraibideetatik abiatuta testuak idatzi eta txukundu.</span></td>
               <td><span lang="es">Presentación y actividades</span><span lang="eu">Aurkezpena eta jarduerak</span></td>
+              <td><span class="taia t3">3</span></td>
             </tr>
             <tr>
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
               <td><span lang="es">Traducir automáticamente al euskera todos los textos de la web para ofrecer la versión bilingüe.</span><span lang="eu">Webguneko testu guztiak euskarara automatikoki itzuli, bertsio elebiduna eskaintzeko.</span></td>
               <td><span lang="es">Versión en euskera</span><span lang="eu">Euskarazko bertsioa</span></td>
+              <td><span class="taia t2">2</span></td>
             </tr>
             <tr>
               <td><strong>Gemini</strong><br><small class="t-org">Google</small></td>
               <td><span lang="es">Crear la ilustración de mi retrato a partir de una foto.</span><span lang="eu">Nire erretratuaren ilustrazioa argazki batetik abiatuta sortu.</span></td>
               <td><span lang="es">Portada</span><span lang="eu">Hasiera</span></td>
+              <td><span class="taia t4">4</span></td>
             </tr>
             <tr>
               <td><strong>Gemini</strong><br><small class="t-org">Google</small></td>
               <td><span lang="es">Crear las ilustraciones de los seis personajes de las cartas de logros y recompensas, que después incorporé a las cartas diseñadas con Hearthcards.</span><span lang="eu">Lorpen- eta sari-karten sei pertsonaien ilustrazioak sortu, gero Hearthcards-ekin diseinatutako kartetan txertatu nituenak.</span></td>
               <td><span lang="es">Actividad 2</span><span lang="eu">2. jarduera</span></td>
+              <td><span class="taia t4">4</span></td>
             </tr>
             <tr>
               <td><strong>Claude</strong><br><small class="t-org">Anthropic</small></td>
               <td><span lang="es">Proponer 20 preguntas para el test de Socrative a partir de los saberes básicos del Decreto 76/2023, mi Padlet y la Taxonomía de Bloom. Seleccioné, revisé y adapté 15.</span><span lang="eu">Socrative-ko testerako 20 galdera proposatu, 76/2023 Dekretuko oinarrizko jakintzetatik, nire Padletetik eta Bloomen taxonomiatik abiatuta. 15 hautatu, berrikusi eta egokitu nituen.</span></td>
               <td><span lang="es">Actividad 3</span><span lang="eu">3. jarduera</span></td>
+              <td><span class="taia t3">3</span></td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p class="taia-legend"><span lang="es">Niveles TAIA: <b>2</b> apoyo instrumental · <b>3</b> estructura y desarrollo parcial, revisados y adaptados · <b>4</b> herramienta principal de producción, con supervisión y edición propias.</span><span lang="eu">TAIA mailak: <b>2</b> laguntza instrumentala · <b>3</b> egitura eta garapen partziala, berrikusita eta egokituta · <b>4</b> ekoizpen-tresna nagusia, gainbegiratze eta edizio propioarekin.</span></p>
 
       <div class="grid-2" style="margin-top:20px">
         <div class="card">
@@ -1436,6 +1471,13 @@
           </p>
         </div>
       </div>
+
+      <div class="card taia-sign">
+        <p class="label"><span lang="es">Declaración</span><span lang="eu">Adierazpena</span></p>
+        <p><span lang="es">Declaro que el uso de inteligencia artificial descrito en esta sección se ajusta al nivel autorizado por la docente para esta actividad evaluable, y que soy responsable del contenido final del trabajo presentado.</span><span lang="eu">Adierazten dut atal honetan deskribatutako adimen artifizialaren erabilera irakasleak ebaluazio-jarduera honetarako baimendutako mailara egokitzen dela, eta aurkeztutako lanaren azken edukiaren arduraduna naizela.</span></p>
+        <p class="taia-firma"><span class="sig">Irune Muxika Pon</span><span><span lang="es">Fecha de entrega:</span><span lang="eu">Entrega-data:</span> <!-- CAMBIAR: fecha de entrega --> __/__/2026</span></p>
+        <p class="taia-src"><span lang="es">Conforme al Anexo I de la Normativa de Uso de Inteligencia Artificial en Trabajos Académicos de la Facultad de Educación (Universidad Camilo José Cela, 2026).</span><span lang="eu">Hezkuntza Fakultateko Lan Akademikoetan Adimen Artifiziala Erabiltzeko Araudiaren I. eranskinaren arabera (Camilo José Cela Unibertsitatea, 2026).</span></p>
+      </div>
     </div>
 
   </div>
@@ -1447,7 +1489,7 @@
       <p>
         <span lang="es">¿Cómo he utilizado la inteligencia artificial?</span>
         <span lang="eu">Nola erabili dut adimen artifiziala?</span>
-        <small><span lang="es">Herramientas, usos y reflexión personal.</span><span lang="eu">Tresnak, erabilerak eta gogoeta pertsonala.</span></small>
+        <small><span lang="es">Declaración de uso (nivel TAIA), herramientas y reflexión.</span><span lang="eu">Erabilera-adierazpena (TAIA maila), tresnak eta gogoeta.</span></small>
       </p>
       <a class="btn-ia" href="#ia" id="iaBtn"><span class="spark">✦</span><span lang="es">Uso de la IA</span><span lang="eu">AAren erabilera</span></a>
     </div>
