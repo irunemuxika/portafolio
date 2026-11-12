@@ -12,6 +12,7 @@
 <html lang="es" data-lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portafolio digital · Irune Muxika Pon</title>
 <meta name="description" content="Portafolio digital y perfil profesional de Irune Muxika Pon">
@@ -31,7 +32,7 @@
     --serif:"Fraunces",Georgia,"Times New Roman",serif;
     --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   }
-  @media (prefers-color-scheme: dark){
+  @media (prefers-color-scheme: dark) and (min-width:99999px){
     :root{
       --bg:#191614; --surface:#221e1b; --text:#f1ebe4; --muted:#b3a89c; --line:#3a332e;
       --accent:#8cc2ad; --accent-soft:#23332d; --clay:#e39a78; --clay-soft:#3a2a22; --sun:#3a321f;
@@ -273,7 +274,7 @@
   @media (max-width:560px){.book-card{flex-direction:column;align-items:flex-start;padding:26px 22px}}
   /* Pósit */
   :root{--note:#fff1a8;--note-ink:#4a3f12}
-  @media (prefers-color-scheme: dark){:root{--note:#5a4f22;--note-ink:#fbf2c9}}
+  @media (prefers-color-scheme: dark) and (min-width:99999px){:root{--note:#5a4f22;--note-ink:#fbf2c9}}
   .hero-side{display:flex;flex-direction:column;align-items:center}
   .postit{position:relative;z-index:4;width:250px;margin:30px 0 0;align-self:flex-end;padding:24px 18px 16px;background:var(--note);color:var(--note-ink);
     transform:rotate(3deg);box-shadow:2px 10px 24px rgba(60,40,10,.18);border-radius:2px 2px 18px 2px;animation:sway 7s ease-in-out infinite}
