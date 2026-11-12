@@ -478,13 +478,21 @@
   .gtable tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--cs) 35%,transparent)}
   .gtable tbody tr:hover td{background:var(--cs)}
   .gtable .g-name{font-family:var(--serif);font-weight:600;font-size:16.5px;width:20%}
-  .gtable-wrap.logro .gtable{min-width:760px}
-  .gtable-wrap.logro .g-name{width:16%}
+  .gtable-wrap.logro .gtable{min-width:0;table-layout:fixed}
+  .gtable-wrap.logro td,.gtable-wrap.logro th{padding-left:12px;padding-right:12px}
+  @media (max-width:760px){.gtable-wrap.logro .gtable{min-width:760px}}
+  .gtable-wrap.logro th:nth-child(1){width:28%}
+  .gtable-wrap.logro th:nth-child(2){width:17%}
+  .gtable-wrap.logro th:nth-child(3){width:23%}
+  .gtable-wrap.logro th:nth-child(4){width:32%}
+  .gtable-wrap.logro .g-name{width:19%}
   .gtable-wrap.logro .g-mut{width:17% !important}
   .gtable-wrap.logro td:nth-child(3){width:24%}
-  .gtable-wrap.logro .g-crit-td{width:33%;text-align:left}
+  .gtable-wrap.logro .g-crit-td{width:31%;text-align:left}
   .gtable-wrap.logro .g-crit-td .g-crit-t{font-size:12.5px;line-height:1.45;color:var(--text)}
-  .gtable-wrap.logro td:last-child,.gtable-wrap.logro th:last-child{width:10%}
+  .gtable-wrap.logro td:last-child,.gtable-wrap.logro th:last-child{width:78px !important;text-align:center;padding-left:6px;padding-right:12px}
+  .gtable-wrap.logro th{word-break:normal;hyphens:none}
+  .gtable-wrap.logro .g-name{font-size:15.5px}
   .gtable .g-name{width:26%}
   .g-nm{display:flex;align-items:center;gap:12px}
   .g-av{flex:none;width:52px;height:52px;border-radius:50%;overflow:hidden;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--c),var(--shadow);transition:transform .3s}
@@ -749,6 +757,24 @@
   .taia-sign p{margin:0 0 10px}
   .taia-firma{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:baseline;margin-top:14px !important}
   .taia-firma .sig{font-family:"Caveat",cursive;font-size:30px;color:var(--accent)}
+  .taia-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:44px;align-items:start}
+  .taia-layout > .table-wrap{margin:0}
+  .taia-layout .taia-note{width:auto;margin:34px 0 0;align-self:start;transform:rotate(1.5deg)}
+  .taia-note ul{margin:8px 0 6px;padding-left:0;list-style:none}
+  .taia-note li{margin:0 0 8px;font-size:12.5px;line-height:1.45}
+  .taia-note li b{font-family:var(--serif);font-size:15px}
+  .taia-note > p:not(.postit-t){font-size:12.5px !important}
+  .taia-note-src{font-size:11px !important;font-style:italic;opacity:.85;margin-top:4px !important}
+  .taia-arrow{position:absolute;left:-62px;top:6px;width:70px;height:60px;overflow:visible;pointer-events:none}
+  .taia-arrow path{fill:none;stroke:var(--clay);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .taia-arrow .pa-line{stroke-dasharray:100;stroke-dashoffset:100;animation:draw 1.2s 1s ease-out forwards}
+  .taia-arrow .pa-head{opacity:0;animation:fadein .3s 2.1s forwards}
+  @media (max-width:1000px){.taia-layout{grid-template-columns:1fr;gap:0}.taia-layout .taia-note{max-width:420px;margin:28px auto 0;transform:rotate(-1deg)}.taia-arrow{display:none}}
+  .sig-wrap{display:inline-flex;align-items:flex-end;gap:0}
+  .pen{width:170px;height:64px;margin-left:-20px;margin-bottom:-6px;overflow:visible}
+  .pen .ink{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-dasharray:130;stroke-dashoffset:130;opacity:.7}
+  .pen g{transform-box:view-box}
+  .pen .ink{animation:draw 1.6s .6s ease-out forwards}
   .taia-src{font-size:12.5px;color:var(--muted);font-style:italic}
   @media (max-width:760px){.taia-grid{grid-template-columns:1fr 1fr}}
   .back{display:inline-block;margin-bottom:22px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
@@ -1411,6 +1437,7 @@
         <p class="taia-def"><span lang="es"><strong>Nivel 4 · IA como herramienta principal de producción:</strong> la IA ha generado una parte sustancial del contenido del trabajo, y yo he actuado como supervisora, editora y garante del rigor del resultado final. En la tabla se indica el nivel que corresponde a cada tarea.</span><span lang="eu"><strong>4. maila · AA ekoizpen-tresna nagusi gisa:</strong> AAk lanaren edukiaren zati handi bat sortu du, eta ni azken emaitzaren gainbegirale, editore eta zorroztasunaren bermatzaile izan naiz. Taulan zeregin bakoitzari dagokion maila adierazten da.</span></p>
       </div>
 
+      <div class="taia-layout">
       <div class="card table-wrap">
         <table>
           <thead>
@@ -1462,7 +1489,18 @@
           </tbody>
         </table>
       </div>
-      <p class="taia-legend"><span lang="es">Niveles TAIA: <b>2</b> apoyo instrumental · <b>3</b> estructura y desarrollo parcial, revisados y adaptados · <b>4</b> herramienta principal de producción, con supervisión y edición propias.</span><span lang="eu">TAIA mailak: <b>2</b> laguntza instrumentala · <b>3</b> egitura eta garapen partziala, berrikusita eta egokituta · <b>4</b> ekoizpen-tresna nagusia, gainbegiratze eta edizio propioarekin.</span></p>
+        <aside class="postit taia-note" role="note">
+          <svg class="taia-arrow" viewBox="0 0 70 60" aria-hidden="true"><path class="pa-line" d="M66 50 C 46 52, 28 30, 8 14"/><path class="pa-head" d="M8 28 L6 12 L22 10"/></svg>
+          <p class="postit-t"><span lang="es">¿Qué significa cada nivel?</span><span lang="eu">Zer esan nahi du maila bakoitzak?</span></p>
+          <p><span lang="es">Definiciones literales de los niveles que he utilizado (art. 4):</span><span lang="eu">Erabili ditudan mailen definizioak (4. art.):</span></p>
+          <ul>
+            <li><b>2</b> · <span lang="es"><em>IA como apoyo instrumental:</em> «Se ha empleado IA para tareas de apoyo como corrección ortográfica y gramatical, traducción de fragmentos, búsqueda o resumen de fuentes bibliográficas, o generación de esquemas orientativos. El contenido sustantivo del trabajo es propio.»</span><span lang="eu"><em>AA laguntza instrumental gisa:</em> «AA laguntza-zereginetarako erabili da, hala nola zuzenketa ortografiko eta gramatikalerako, zatien itzulpenerako, iturri bibliografikoak bilatzeko edo laburtzeko, edo eskema orientagarriak sortzeko. Lanaren funtsezko edukia norberarena da.»</span></li>
+            <li><b>3</b> · <span lang="es"><em>IA para estructura y desarrollo parcial:</em> «La IA ha participado en la organización del trabajo o en la redacción de secciones concretas, que han sido posteriormente revisadas, adaptadas y editadas de forma significativa por el estudiante.»</span><span lang="eu"><em>AA egiturarako eta garapen partzialerako:</em> «AAk lanaren antolaketan edo atal zehatzen idazketan parte hartu du, eta ikasleak, ondoren, nabarmen berrikusi, egokitu eta editatu ditu.»</span></li>
+            <li><b>4</b> · <span lang="es"><em>IA como herramienta principal de producción:</em> «La IA ha generado una parte sustancial del texto o contenido del trabajo. El estudiante ha actuado como supervisor, editor y garante del rigor del resultado final.»</span><span lang="eu"><em>AA ekoizpen-tresna nagusi gisa:</em> «AAk lanaren testuaren edo edukiaren zati handi bat sortu du. Ikasleak azken emaitzaren gainbegirale, editore eta zorroztasunaren bermatzaile gisa jardun du.»</span></li>
+          </ul>
+          <p class="taia-note-src"><span lang="es">Fuente: Normativa de Uso de Inteligencia Artificial en Trabajos Académicos, art. 4. Facultad de Educación, Universidad Camilo José Cela (2026).</span><span lang="eu">Iturria: Lan Akademikoetan Adimen Artifiziala Erabiltzeko Araudia, 4. art. Hezkuntza Fakultatea, Camilo José Cela Unibertsitatea (2026). Gaztelaniazko jatorrizko testuaren itzulpena.</span></p>
+        </aside>
+      </div>
 
       <div class="grid-2" style="margin-top:20px">
         <div class="card">
@@ -1487,7 +1525,19 @@
       <div class="card taia-sign">
         <p class="label"><span lang="es">Declaración</span><span lang="eu">Adierazpena</span></p>
         <p><span lang="es">Declaro que el uso de inteligencia artificial descrito en esta sección se ajusta al nivel autorizado por la docente para esta actividad evaluable, y que soy responsable del contenido final del trabajo presentado.</span><span lang="eu">Adierazten dut atal honetan deskribatutako adimen artifizialaren erabilera irakasleak ebaluazio-jarduera honetarako baimendutako mailara egokitzen dela, eta aurkeztutako lanaren azken edukiaren arduraduna naizela.</span></p>
-        <p class="taia-firma"><span class="sig">Irune Muxika Pon</span><span><span lang="es">Fecha de entrega:</span><span lang="eu">Entrega-data:</span> 10/12/2026</span></p>
+        <p class="taia-firma"><span class="sig-wrap"><span class="sig">Irune Muxika Pon</span><svg class="pen" viewBox="0 0 160 60" aria-hidden="true">
+  <path class="ink" d="M4 50 C 30 44, 52 54, 78 47 S 108 44, 118 46"/>
+  <g transform="rotate(-28 120 40)">
+    <path d="M100 40 L120 34 L120 46 Z" fill="#c9a227"/>
+    <path d="M100 40 L112 37.6 L112 42.4 Z" fill="#8a6d12"/>
+    <line x1="100" y1="40" x2="110" y2="40" stroke="#5a460c" stroke-width=".8"/>
+    <rect x="120" y="33" width="10" height="14" rx="2" fill="#2b2522"/>
+    <rect x="129" y="32" width="5" height="16" fill="#c9a227"/>
+    <rect x="134" y="32" width="24" height="16" rx="5" fill="#3d6b5c"/>
+    <rect x="138" y="29" width="16" height="3.5" rx="1.5" fill="#c9a227"/>
+    <rect x="136" y="35" width="20" height="2.5" rx="1" fill="rgba(255,255,255,.28)"/>
+  </g>
+</svg></span><span><span lang="es">Fecha de entrega:</span><span lang="eu">Entrega-data:</span> 10/12/2026</span></p>
         <p class="taia-src"><span lang="es">Conforme al Anexo I de la Normativa de Uso de Inteligencia Artificial en Trabajos Académicos de la Facultad de Educación (Universidad Camilo José Cela, 2026).</span><span lang="eu">Hezkuntza Fakultateko Lan Akademikoetan Adimen Artifiziala Erabiltzeko Araudiaren I. eranskinaren arabera (Camilo José Cela Unibertsitatea, 2026).</span></p>
       </div>
     </div>
